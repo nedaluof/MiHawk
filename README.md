@@ -1,6 +1,6 @@
 <img src="https://github.com/nedaluof/MiHawk/blob/master/art/mihawk_eye.jpg?raw=true" width="150">[![](https://jitpack.io/v/nedaluof/MiHawk.svg)](https://jitpack.io/#nedaluof/MiHawk)
 # MiHawk
-MiHawk is simple Android Library to store and retrieve pair of key-value data with encryption , internally it use jetpack DataStore Preferences. 
+MiHawk is simple and secure 🔒 Android Library to store and retrieve pair of key-value data with encryption , internally it use jetpack DataStore Preferences 💽 to store data. 
 
 Usage
 -----
