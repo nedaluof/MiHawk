@@ -1,4 +1,4 @@
-[![](https://jitpack.io/v/nedaluof/MiHawk.svg)](https://jitpack.io/#nedaluof/MiHawk)
+![mihawk_eye][mihawkEye] MiHawk [![](https://jitpack.io/v/nedaluof/MiHawk.svg)](https://jitpack.io/#nedaluof/MiHawk)
 # MiHawk
 MiHawk is simple Android Library to store and retrieve pair of key-value data with encryption , internally it use jetpack DataStore Preferences. 
 
