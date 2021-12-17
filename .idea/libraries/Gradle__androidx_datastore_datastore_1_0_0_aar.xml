@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.datastore:datastore:1.0.0@aar">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/0a48e89208bf9e0bb8ecadad40ea3972/transformed/jetified-datastore-1.0.0/res" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/0a48e89208bf9e0bb8ecadad40ea3972/transformed/jetified-datastore-1.0.0/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/0a48e89208bf9e0bb8ecadad40ea3972/transformed/jetified-datastore-1.0.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/modules-2/files-2.1/androidx.datastore/datastore/1.0.0/b00f14f5978f6ec5072348e9f4c8f47f1bf9131a/datastore-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
