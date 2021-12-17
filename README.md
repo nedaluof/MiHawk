@@ -8,37 +8,39 @@ Usage
 ### Dependency
 
 ```groovy
-in global ``build.gradle``
+In build.gradle
 allprojects {
   repositories {
      maven { url 'https://jitpack.io' }
   }
 }
 
-Include the library in your ``build.gradle.YOUR_MODULE``
+Include the library in your build.gradle.YOUR_MODULE
 dependencies {
    implementation 'com.github.nedaluof:MiHawk:1.0.0'
 }
+
 ```
+
 ```kotlin
  MiHawk.init(context) //must called before any use of MiHawk else RuntimeException will be thrown
  
- put data to MiHawk:
- MiHawk.put(key: String, value: T)
+ - put data to MiHawk:
+   MiHawk.put(key: String, value: T)
  
- get data from MiHawk
- MiHawk.get(key: String, result: (T?) -> Unit)
- OR with default value
- MiHawk.get(key: String, defaultValue: T,  result: (T?) -> Unit)
+- get data from MiHawk
+  MiHawk.get(key: String, result: (T?) -> Unit)
+  OR with default value
+  MiHawk.get(key: String, defaultValue: T,  result: (T?) -> Unit)
  
- remove data from MiHawk
- MiHawk.remove(key: String, result: (Boolean) -> Unit)
+- remove data from MiHawk
+  MiHawk.remove(key: String, result: (Boolean) -> Unit)
  
- to check if data exist in MiHawk by key
- MiHawk.contains(key: String, result: (Boolean) -> Unit)
+- to check if data exist in MiHawk by key
+  MiHawk.contains(key: String, result: (Boolean) -> Unit)
 
-to delete all data saved in MiHawk
-MiHawk.deleteAll(result: (Boolean) -> Unit)
+- to delete all data saved in MiHawk
+  MiHawk.deleteAll(result: (Boolean) -> Unit)
 ```
 
 
@@ -72,6 +74,8 @@ language governing permissions and limitations under the License.
 
 ```
 
-```
-Inspired from [Hawk](https://github.com/orhanobut/hawk)
-```
+
+
+
+
+~ Inspired from [Hawk](https://github.com/orhanobut/hawk) Library. ~
