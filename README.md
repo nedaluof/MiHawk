@@ -28,18 +28,18 @@ dependencies {
  - put data to MiHawk:
    MiHawk.put(key: String, value: T)
  
-- get data from MiHawk
+- get data from MiHawk:
   MiHawk.get(key: String, result: (T?) -> Unit)
-  OR with default value
+  OR with default value:
   MiHawk.get(key: String, defaultValue: T,  result: (T?) -> Unit)
  
-- remove data from MiHawk
+- remove data from MiHawk:
   MiHawk.remove(key: String, result: (Boolean) -> Unit)
  
-- to check if data exist in MiHawk by key
+- to check if data exist in MiHawk by key:
   MiHawk.contains(key: String, result: (Boolean) -> Unit)
 
-- to delete all data saved in MiHawk
+- to delete all data saved in MiHawk:
   MiHawk.deleteAll(result: (Boolean) -> Unit)
 ```
 
