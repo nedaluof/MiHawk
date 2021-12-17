@@ -7,17 +7,16 @@ Usage
 
 ### Dependency
 
-allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
-  
-Include the library in your ``build.gradle``
-
 ```groovy
+in global ``build.gradle``
+allprojects {
+  repositories {
+     maven { url 'https://jitpack.io' }
+  }
+}
+
+Include the library in your ``build.gradle.YOUR_MODULE``
 dependencies {
-	 implementation 'com.github.nedaluof:MiHawk:-SNAPSHOT'
+   implementation 'com.github.nedaluof:MiHawk:-SNAPSHOT'
 }
 ```
