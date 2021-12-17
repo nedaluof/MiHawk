@@ -8,14 +8,14 @@ Usage
 ### Dependency
 
 ```groovy
-In build.gradle
+//In build.gradle
 allprojects {
   repositories {
      maven { url 'https://jitpack.io' }
   }
 }
 
-Include the library in your build.gradle.YOUR_MODULE
+//Include the library in your build.gradle.YOUR_MODULE
 dependencies {
    implementation 'com.github.nedaluof:MiHawk:1.0.0'
 }
@@ -23,7 +23,9 @@ dependencies {
 ```
 
 ```kotlin
- MiHawk.init(context) //must called before any use of MiHawk else RuntimeException will be thrown
+
+ - init MiHawk:
+   MiHawk.init(context) //must called before any use of MiHawk else RuntimeException will be thrown
  
  - put data to MiHawk:
    MiHawk.put(key: String, value: T)
@@ -44,7 +46,7 @@ dependencies {
 ```
 
 
-Coming channgeess / Todos
+### Coming channgeess / Todos
 -----
 - [ ] Replace GSON with [Moshi](https://github.com/square/moshi).
 - [ ] Make the MiHawk customizable.
