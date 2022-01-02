@@ -43,14 +43,14 @@ object MiHawk {
     miHawkFacade.removeData(key, result)
   }
 
-  fun deleteAll(result: (Boolean) -> Unit) {
-    checkMiHawkFacade()
-    miHawkFacade.deleteAll(result)
-  }
-
   fun contains(key: String, result: (Boolean) -> Unit) {
     checkMiHawkFacade()
     miHawkFacade.contains(key, result)
+  }
+
+  fun deleteAll(result: (Boolean) -> Unit) {
+    checkMiHawkFacade()
+    miHawkFacade.deleteAll(result)
   }
 
   private fun checkMiHawkFacade() {
