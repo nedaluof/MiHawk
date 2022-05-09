@@ -17,7 +17,7 @@ allprojects {
 
 //Include the library in your build.gradle.YOUR_MODULE
 dependencies {
-   implementation 'com.github.nedaluof:MiHawk:1.0.0'
+   implementation 'com.github.nedaluof:MiHawk:1.0.1'
 }
 
 ```
