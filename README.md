@@ -46,7 +46,7 @@ dependencies {
 ```
 
 
-### Coming channgeess / Todos
+### Coming channges / Todos
 -----
 - [ ] Replace GSON with [Moshi](https://github.com/square/moshi).
 - [ ] Make the MiHawk customizable.
