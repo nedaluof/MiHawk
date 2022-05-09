@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.appcompat:appcompat:1.4.0@aar">
     <ANNOTATIONS>
-      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/8e2706a300bbec00002d22cf9bfadad6/transformed/appcompat-1.4.0/annotations.zip!/" />
+      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/fdb34f69759b3359612a62e017ba4a5c/transformed/appcompat-1.4.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/8e2706a300bbec00002d22cf9bfadad6/transformed/appcompat-1.4.0/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/8e2706a300bbec00002d22cf9bfadad6/transformed/appcompat-1.4.0/res" />
-      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/8e2706a300bbec00002d22cf9bfadad6/transformed/appcompat-1.4.0/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/fdb34f69759b3359612a62e017ba4a5c/transformed/appcompat-1.4.0/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/fdb34f69759b3359612a62e017ba4a5c/transformed/appcompat-1.4.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/fdb34f69759b3359612a62e017ba4a5c/transformed/appcompat-1.4.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

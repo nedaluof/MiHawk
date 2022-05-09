@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.transition:transition:1.2.0@aar">
     <ANNOTATIONS>
-      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/0cae632d1fa87b3adbce7aa9cb67f030/transformed/transition-1.2.0/annotations.zip!/" />
+      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/9682c8376a2af0601d8d2f9a5f5ddc68/transformed/transition-1.2.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/0cae632d1fa87b3adbce7aa9cb67f030/transformed/transition-1.2.0/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/0cae632d1fa87b3adbce7aa9cb67f030/transformed/transition-1.2.0/res" />
-      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/0cae632d1fa87b3adbce7aa9cb67f030/transformed/transition-1.2.0/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/9682c8376a2af0601d8d2f9a5f5ddc68/transformed/transition-1.2.0/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/9682c8376a2af0601d8d2f9a5f5ddc68/transformed/transition-1.2.0/res" />
+      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/9682c8376a2af0601d8d2f9a5f5ddc68/transformed/transition-1.2.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

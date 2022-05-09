@@ -2,9 +2,10 @@
   <library name="Gradle: androidx.vectordrawable:vectordrawable:1.1.0@aar">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/1fcc58705be535d81ca2122cd82fb2dd/transformed/vectordrawable-1.1.0/res" />
-      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/c095d5953d9a5de11177550da37e5391/transformed/vectordrawable-1.1.0/AndroidManifest.xml" />
       <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/c095d5953d9a5de11177550da37e5391/transformed/vectordrawable-1.1.0/res" />
-      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/c095d5953d9a5de11177550da37e5391/transformed/vectordrawable-1.1.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/cf262cdbb38fe6184621f92426ea2a6b/transformed/vectordrawable-1.1.0/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/cf262cdbb38fe6184621f92426ea2a6b/transformed/vectordrawable-1.1.0/res" />
+      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/cf262cdbb38fe6184621f92426ea2a6b/transformed/vectordrawable-1.1.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

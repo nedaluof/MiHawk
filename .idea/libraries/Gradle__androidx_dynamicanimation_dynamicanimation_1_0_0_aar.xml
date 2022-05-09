@@ -2,9 +2,10 @@
   <library name="Gradle: androidx.dynamicanimation:dynamicanimation:1.0.0@aar">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/492e7286a70fa155ee49b6992cf6c39d/transformed/dynamicanimation-1.0.0/res" />
-      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/2efeeb717228ca124dd17ae96484139b/transformed/dynamicanimation-1.0.0/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/2efeeb717228ca124dd17ae96484139b/transformed/dynamicanimation-1.0.0/res" />
-      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/2efeeb717228ca124dd17ae96484139b/transformed/dynamicanimation-1.0.0/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/6c524df6d45e3a266eaf5f6a300e785a/transformed/dynamicanimation-1.0.0/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/6c524df6d45e3a266eaf5f6a300e785a/transformed/dynamicanimation-1.0.0/res" />
+      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/6c524df6d45e3a266eaf5f6a300e785a/transformed/dynamicanimation-1.0.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

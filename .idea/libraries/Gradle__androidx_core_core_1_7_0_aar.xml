@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.core:core:1.7.0@aar">
     <ANNOTATIONS>
-      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/fb3270031bd107031c21c5dc13d9e5ef/transformed/core-1.7.0/annotations.zip!/" />
+      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/6bd06ca0e5f33590c68af0ab392d3a5d/transformed/core-1.7.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/fb3270031bd107031c21c5dc13d9e5ef/transformed/core-1.7.0/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/fb3270031bd107031c21c5dc13d9e5ef/transformed/core-1.7.0/AndroidManifest.xml" />
-      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/fb3270031bd107031c21c5dc13d9e5ef/transformed/core-1.7.0/res" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/6bd06ca0e5f33590c68af0ab392d3a5d/transformed/core-1.7.0/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/6bd06ca0e5f33590c68af0ab392d3a5d/transformed/core-1.7.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/6bd06ca0e5f33590c68af0ab392d3a5d/transformed/core-1.7.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

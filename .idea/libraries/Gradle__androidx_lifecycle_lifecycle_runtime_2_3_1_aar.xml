@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.lifecycle:lifecycle-runtime:2.3.1@aar">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/64c49fa4643332ede64efa754e8de1ea/transformed/lifecycle-runtime-2.3.1/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/64c49fa4643332ede64efa754e8de1ea/transformed/lifecycle-runtime-2.3.1/AndroidManifest.xml" />
-      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/64c49fa4643332ede64efa754e8de1ea/transformed/lifecycle-runtime-2.3.1/res" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/86bc5d3bb217308aed29e040e6d67e47/transformed/lifecycle-runtime-2.3.1/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/86bc5d3bb217308aed29e040e6d67e47/transformed/lifecycle-runtime-2.3.1/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/86bc5d3bb217308aed29e040e6d67e47/transformed/lifecycle-runtime-2.3.1/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

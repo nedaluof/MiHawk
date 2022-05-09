@@ -2,9 +2,10 @@
   <library name="Gradle: com.facebook.conceal:conceal:1.1.3@aar">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/1776ed521ec5c89162328ce8bf916f56/transformed/jetified-conceal-1.1.3/res" />
-      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/835b31e89bb5075227020411c9c7f5ab/transformed/jetified-conceal-1.1.3/AndroidManifest.xml" />
       <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/835b31e89bb5075227020411c9c7f5ab/transformed/jetified-conceal-1.1.3/res" />
-      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/835b31e89bb5075227020411c9c7f5ab/transformed/jetified-conceal-1.1.3/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/39d334398126798114ac68728ccaf6ad/transformed/jetified-conceal-1.1.3/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/39d334398126798114ac68728ccaf6ad/transformed/jetified-conceal-1.1.3/res" />
+      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/39d334398126798114ac68728ccaf6ad/transformed/jetified-conceal-1.1.3/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

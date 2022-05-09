@@ -102,5 +102,4 @@ class MainActivity : AppCompatActivity() {
       logger.error("delete result $it")
     }
   }
-
 }

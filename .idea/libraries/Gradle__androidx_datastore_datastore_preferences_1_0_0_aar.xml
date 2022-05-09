@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.datastore:datastore-preferences:1.0.0@aar">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/02f02dcb22dcfda39a1005044d32ae48/transformed/jetified-datastore-preferences-1.0.0/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/02f02dcb22dcfda39a1005044d32ae48/transformed/jetified-datastore-preferences-1.0.0/res" />
-      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/02f02dcb22dcfda39a1005044d32ae48/transformed/jetified-datastore-preferences-1.0.0/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/d5066b23836e3360438cf6215c7360bb/transformed/jetified-datastore-preferences-1.0.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/d5066b23836e3360438cf6215c7360bb/transformed/jetified-datastore-preferences-1.0.0/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/d5066b23836e3360438cf6215c7360bb/transformed/jetified-datastore-preferences-1.0.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
