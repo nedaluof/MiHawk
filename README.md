@@ -48,7 +48,6 @@ dependencies {
 
 ### Coming channges / Todos
 -----
-- [ ] Replace GSON with [Moshi](https://github.com/square/moshi).
 - [ ] Make the MiHawk customizable.
 - [ ] Replace [Facebook Conceal](https://github.com/facebookarchive/conceal) with alternative encryption algorithm.
 - [ ] Provide heavy unit test.
