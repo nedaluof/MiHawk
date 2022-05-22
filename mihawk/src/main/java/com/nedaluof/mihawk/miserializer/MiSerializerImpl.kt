@@ -9,8 +9,11 @@ class MiSerializerImpl(
   private val gson: Gson
 ) : MiSerializer {
 
-  override fun <T> toString(t: T): String = gson.toJson(t)
+  override fun <T> toString(obj: T): String {
+    return gson.toJson(obj)
+  }
 
-  override fun <T> fromString(value: String?, aClass: Class<T>): T? =
-    gson.fromJson(value, aClass)
+  override fun <T> fromString(json: String?, aClass: Class<T>): T? {
+    return gson.fromJson(json, aClass)
+  }
 }

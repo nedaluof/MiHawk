@@ -11,7 +11,8 @@ class MiHawkFacadeImpl(
   private val preferences: MiPreferences
 ) : MiHawkFacade {
 
-  override fun <T> putData(key: String, t: T) = preferences.putData(key, t)
+  override fun <T> putData(key: String, t: T) =
+    preferences.putData(key, t)
 
   override fun <T> getData(key: String, aClass: Class<T>): Flow<T?> =
     preferences.getData(key, aClass)
