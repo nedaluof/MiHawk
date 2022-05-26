@@ -56,15 +56,16 @@ class MiPreferencesImpl(
       }
     }
 
-  override suspend fun removeData(key: String) {
+  override suspend fun removeData(key: String, result: (Boolean) -> Unit) {
     withContext(dispatcher) {
       try {
         log.info("removeData -> of key {$key}")
         dataStore.edit { preferences -> preferences.remove(key) }
         log.info("removeData -> removed successfully")
+        result(true)
       } catch (e: Exception) {
         log.error("removeData -> ${e.message!!}")
-        e.printStackTrace()
+        result(false)
       }
     }
   }

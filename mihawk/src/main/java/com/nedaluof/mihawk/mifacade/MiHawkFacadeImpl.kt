@@ -18,8 +18,7 @@ class MiHawkFacadeImpl(
     preferences.getData(key, aClass)
 
   override fun removeData(key: String, result: (Boolean) -> Unit) = runBlocking {
-    preferences.removeData(key)
-    result(true)
+    preferences.removeData(key, result)
   }
 
   override fun contains(key: String, result: (Boolean) -> Unit) =

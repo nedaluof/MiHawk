@@ -23,7 +23,9 @@ import com.nedaluof.mihawk.miserializer.MiSerializerImpl
  */
 object MiServiceLocator {
 
-  fun provideMiLogger(): MiLogger = MiLoggerImpl(true)
+  var isLoggerEnabled = true
+
+  fun provideMiLogger(): MiLogger = MiLoggerImpl(isLoggerEnabled)
 
   fun provideMiPreparation(context: Context): MiPreparation =
     MiPreparationImpl(provideMiSerializer(), provideMiEncryption(context))
