@@ -27,8 +27,7 @@ class MainActivity : AppCompatActivity() {
   }
 
   private fun initMiHawk() {
-    MiHawk.Builder()
-      .withContext(this)
+    MiHawk.Builder(this)
       .withPreferenceName("NEDAL_PREFS")
       .withMiLogger(object : MiLogger {
         override fun info(message: String) {

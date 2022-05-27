@@ -25,7 +25,7 @@ object MiServiceLocator {
 
   var preferenceFileName = MiConstants.PREFERENCE_FILE_NAME_DO_NOT_CHANGE
 
-  fun provideMiLogger(): MiLogger = MiLoggerImpl(isLoggerEnabled)
+  fun provideMiLogger(): MiLogger = MiLoggerImpl()
 
   fun provideMiPreparation(context: Context): MiPreparation =
     MiPreparationImpl(provideMiSerializer(), provideMiEncryption(context))

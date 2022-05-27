@@ -8,8 +8,15 @@ import androidx.datastore.preferences.preferencesDataStore
 
 /**
  * Created by NedaluOf on 5/27/2022.
+ * *********************************************
+ * Todo: Migration strategy for people whose
+ *       need to use MiHawk in existing projects.
  */
-class MiDataStoreInitializer(context: Context, preferenceFileName: String) {
+class MiDataStoreInitializer(
+  context: Context,
+  preferenceFileName: String
+) {
+
   private fun sharedPreferencesMigration(context: Context) =
     listOf(SharedPreferencesMigration(context, MiConstants.PREFERENCE_FILE_NAME_DO_NOT_CHANGE))
 

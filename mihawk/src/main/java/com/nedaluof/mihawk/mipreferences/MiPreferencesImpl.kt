@@ -1,6 +1,5 @@
 package com.nedaluof.mihawk.mipreferences
 
-import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.MutablePreferences
 import androidx.datastore.preferences.core.Preferences
@@ -19,22 +18,23 @@ import kotlinx.coroutines.withContext
 /**
  * Created by NedaluOf on 11/10/2021.
  */
-class MiPreferencesImpl(
+class MiPreferencesImpl internal constructor(
   private val dataStore: DataStore<Preferences>,
-  private val preparation: MiPreparation,
-  private val log: MiLogger,
+  private val miPreparation: MiPreparation,
+  private val miLogger: MiLogger,
   private val dispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : MiPreferences {
 
-  override fun <T> putData(key: String, t: T) {
+  //region MiPreferences implementation
+  override fun <T> putData(key: String, value: T) {
     runBlocking(dispatcher) {
       try {
         dataStore.edit { preferences ->
-          preferences[key] = t
+          preferences[key] = value
         }
-        log.info("putData -> ${t.toString()}")
+        checkIfIsLoggerEnabled { miLogger.info("putData -> ${value.toString()}") }
       } catch (e: Exception) {
-        log.error("putData -> ${e.message!!}")
+        checkIfIsLoggerEnabled { miLogger.error("putData -> ${e.message!!}") }
         e.printStackTrace()
       }
     }
@@ -45,11 +45,11 @@ class MiPreferencesImpl(
       withContext(dispatcher) {
         try {
           val value = preferences[key, aClass]
-          log.info("getData -> ${value.toString()}")
+          checkIfIsLoggerEnabled { miLogger.info("getData -> ${value.toString()}") }
           value
         } catch (e: Exception) {
-          log.error("getData -> ${e.message!!}")
-          log.error("getData -> No data Stored With this key in MiHawk")
+          miLogger.error("getData -> ${e.message!!}")
+          miLogger.error("getData -> No data Stored With this key in MiHawk")
           null
         }
       }
@@ -58,12 +58,12 @@ class MiPreferencesImpl(
   override suspend fun removeData(key: String, result: (Boolean) -> Unit) {
     withContext(dispatcher) {
       try {
-        log.info("removeData -> of key {$key}")
+        checkIfIsLoggerEnabled { miLogger.info("removeData -> of key {$key}") }
         dataStore.edit { preferences -> preferences.remove(key) }
-        log.info("removeData -> removed successfully")
+        checkIfIsLoggerEnabled { miLogger.info("removeData -> removed successfully") }
         result(true)
       } catch (e: Exception) {
-        log.error("removeData -> ${e.message!!}")
+        checkIfIsLoggerEnabled { miLogger.error("removeData -> ${e.message!!}") }
         result(false)
       }
     }
@@ -76,9 +76,9 @@ class MiPreferencesImpl(
           preferences.clear()
           result(true)
         }
-        log.info("deleteAll -> all data deleted successfully")
+        checkIfIsLoggerEnabled { miLogger.info("deleteAll -> all data deleted successfully") }
       } catch (e: Exception) {
-        log.error("deleteAll -> ${e.message!!}")
+        checkIfIsLoggerEnabled { miLogger.error("deleteAll -> ${e.message!!}") }
         e.printStackTrace()
       }
     }
@@ -88,20 +88,25 @@ class MiPreferencesImpl(
     runBlocking {
       try {
         dataStore.edit { result(it.contains(key)) }
-        log.info("contains -> check if $key exist.")
+        checkIfIsLoggerEnabled { miLogger.info("contains -> check if $key exist.") }
       } catch (e: Exception) {
-        log.error("deleteAll -> ${e.message!!}")
+        checkIfIsLoggerEnabled { miLogger.error("deleteAll -> ${e.message!!}") }
         e.printStackTrace()
       }
     }
   }
 
+  //endregion
 
+  /**
+   * DataStore operators utils.
+   * */
+  //region operators
   private operator fun <T> MutablePreferences.set(
     key: String,
     value: T
   ) {
-    val preparedValue = preparation.prepareDataToSet(key, value)
+    val preparedValue = miPreparation.prepareDataToSet(key, value)
     set(stringPreferencesKey(key), preparedValue)
   }
 
@@ -111,7 +116,7 @@ class MiPreferencesImpl(
     aClass: Class<T>
   ): T? {
     val cipherText = get(stringPreferencesKey(key))!!
-    return preparation.prepareDataToGet(Pair(key, cipherText), aClass)
+    return miPreparation.prepareDataToGet(Pair(key, cipherText), aClass)
       ?: get(stringPreferencesKey(key)) as T?
   }
 
@@ -119,8 +124,19 @@ class MiPreferencesImpl(
     key: String
   ) = remove(stringPreferencesKey(key))
 
-
   private fun MutablePreferences.contains(
     key: String
   ): Boolean = contains(stringPreferencesKey(key))
+  //endregion
+
+  /**
+   * Checking if logger enabled
+   * */
+  private fun checkIfIsLoggerEnabled(
+    loggerEnabled: () -> Unit
+  ) {
+    if (MiServiceLocator.isLoggerEnabled) {
+      loggerEnabled()
+    }
+  }
 }
