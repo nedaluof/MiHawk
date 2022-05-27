@@ -13,6 +13,7 @@ import com.nedaluof.mihawk.mipreparation.MiPreparationImpl
 import com.nedaluof.mihawk.miserializer.MiSerializer
 import com.nedaluof.mihawk.miserializer.MiSerializerImpl
 import com.nedaluof.mihawk.miutil.MiServiceLocator
+import com.nedaluof.mihawk.miutil.MiServiceLocator.isLoggerEnabled
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import java.lang.ref.WeakReference
@@ -166,7 +167,7 @@ object MiHawk {
    *
    * Note : if you provide your logger over
    *        default logger implementation the
-   *        setLoggingEnabled(isLoggerEnabled: Boolean)
+   *        withLoggingEnabled(isLoggerEnabled: Boolean)
    *        function will not make any sense.
    * */
   class Builder {
@@ -192,8 +193,12 @@ object MiHawk {
       this.miEncryption = miEncryption
     }
 
-    fun setLoggingEnabled(isLoggerEnabled: Boolean) = apply {
+    fun withLoggingEnabled(isLoggerEnabled: Boolean) = apply {
       MiServiceLocator.isLoggerEnabled = isLoggerEnabled
+    }
+
+    fun withPreferenceName(preferenceFileName: String) = apply {
+      MiServiceLocator.preferenceFileName = preferenceFileName
     }
 
     fun build(): MiHawkFacade {
@@ -207,7 +212,7 @@ object MiHawk {
         }
         facade = MiHawkFacadeImpl(
           MiServiceLocator.provideMiPreferences(
-            context,
+            MiServiceLocator.provideDataStore(context),
             miPreparation,
             getMiLogger()
           )

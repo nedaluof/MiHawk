@@ -2,9 +2,7 @@ package com.nedaluof.mihawk.miutil
 
 import android.content.Context
 import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.SharedPreferencesMigration
 import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.preferencesDataStore
 import com.google.gson.Gson
 import com.nedaluof.mihawk.miencryption.MiEncryption
 import com.nedaluof.mihawk.miencryption.MiEncryptionImpl
@@ -25,6 +23,8 @@ object MiServiceLocator {
 
   var isLoggerEnabled = true
 
+  var preferenceFileName = MiConstants.PREFERENCE_FILE_NAME_DO_NOT_CHANGE
+
   fun provideMiLogger(): MiLogger = MiLoggerImpl(isLoggerEnabled)
 
   fun provideMiPreparation(context: Context): MiPreparation =
@@ -41,22 +41,16 @@ object MiServiceLocator {
   }
 
   fun provideMiPreferences(
-    context: Context,
+    dataStore: DataStore<Preferences>,
     miPreparation: MiPreparation,
     miLogger: MiLogger
   ): MiPreferences = MiPreferencesImpl(
-    context,
-    log = miLogger,
-    preparation = miPreparation
+    dataStore,
+    miPreparation,
+    miLogger
   )
 
-  fun provideDataStore(context: Context) = context.dataStore
-
-  private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(
-    name = MiConstants.STORAGE_TAG_DO_NOT_CHANGE,
-    produceMigrations = ::sharedPreferencesMigration
-  )
-
-  private fun sharedPreferencesMigration(context: Context) =
-    listOf(SharedPreferencesMigration(context, MiConstants.STORAGE_TAG_DO_NOT_CHANGE))
+  fun provideDataStore(context: Context): DataStore<Preferences> {
+    return MiDataStoreInitializer(context, preferenceFileName).dataStore
+  }
 }

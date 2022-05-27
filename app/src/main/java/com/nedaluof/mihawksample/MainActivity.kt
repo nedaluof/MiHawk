@@ -2,11 +2,9 @@ package com.nedaluof.mihawksample
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.nedaluof.mihawk.MiHawk
 import com.nedaluof.mihawk.milogger.MiLogger
-import com.nedaluof.mihawk.miutil.MiServiceLocator
 
 /**
  * Created by NedaluOf on 11/17/2021.
@@ -31,6 +29,7 @@ class MainActivity : AppCompatActivity() {
   private fun initMiHawk() {
     MiHawk.Builder()
       .withContext(this)
+      .withPreferenceName("NEDAL_PREFS")
       .withMiLogger(object : MiLogger {
         override fun info(message: String) {
           Log.i("MY_LOGGER" ,message )

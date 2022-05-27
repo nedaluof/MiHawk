@@ -20,10 +20,9 @@ import kotlinx.coroutines.withContext
  * Created by NedaluOf on 11/10/2021.
  */
 class MiPreferencesImpl(
-  private val context: Context,
-  private val dataStore: DataStore<Preferences> = MiServiceLocator.provideDataStore(context),
-  private val preparation: MiPreparation = MiServiceLocator.provideMiPreparation(context),
-  private val log: MiLogger = MiServiceLocator.provideMiLogger(),
+  private val dataStore: DataStore<Preferences>,
+  private val preparation: MiPreparation,
+  private val log: MiLogger,
   private val dispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : MiPreferences {
 
