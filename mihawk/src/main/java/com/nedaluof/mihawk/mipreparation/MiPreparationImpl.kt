@@ -20,7 +20,7 @@ class MiPreparationImpl(
     if (encryptor.initialized()) {
       cipher = encryptor.encrypt(key, serializedValue)
     }
-    return if (cipher.isEmpty()) serializedValue else cipher
+    return cipher.ifEmpty { serializedValue }
   }
 
   override fun <T> prepareDataToGet(

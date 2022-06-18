@@ -1,14 +1,18 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.print:print:1.0.0@aar">
     <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/01a515f8bf2f60bf4d0c0636006b1184/transformed/print-1.0.0/annotations.zip!/" />
       <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/01a515f8bf2f60bf4d0c0636006b1184/transformed/print-1.0.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/fe0cd59e24e2a1979051b858ccb0c943/transformed/print-1.0.0/res" />
       <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/43037c0b2dd43be656c119826bff6d23/transformed/print-1.0.0/res" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/01a515f8bf2f60bf4d0c0636006b1184/transformed/print-1.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/01a515f8bf2f60bf4d0c0636006b1184/transformed/print-1.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/01a515f8bf2f60bf4d0c0636006b1184/transformed/print-1.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/01a515f8bf2f60bf4d0c0636006b1184/transformed/print-1.0.0/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/01a515f8bf2f60bf4d0c0636006b1184/transformed/print-1.0.0/AndroidManifest.xml" />
       <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/01a515f8bf2f60bf4d0c0636006b1184/transformed/print-1.0.0/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/01a515f8bf2f60bf4d0c0636006b1184/transformed/print-1.0.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

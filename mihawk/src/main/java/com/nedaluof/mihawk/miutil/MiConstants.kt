@@ -6,10 +6,14 @@ package com.nedaluof.mihawk.miutil
 object MiConstants {
 
   /**
-   * NEVER ever change STORAGE_TAG_DO_NOT_CHANGE
-   * It will break backward compatibility in terms of keeping previous data
+   * if you already MiHawk USED and the app on
+   * the production channel please do not change
+   * DEFAULT_PREFERENCE_FILE_NAME cause it
+   * will break backward compatibility in terms of
+   * keeping previous user data , but if you need to change
+   * it use the MiHawk Builder to change it.
    */
-  const val STORAGE_TAG_DO_NOT_CHANGE = "MiHawk"
+  const val DEFAULT_PREFERENCE_FILE_NAME = "MI_HAWK_DEFAULT_PREFERENCE_FILE_NAME"
   const val LOG_E = "MiHawk Error -> "
   const val LOG_I = "MiHawk Info -> "
   const val LOG_D = "MiHawk Debug -> "

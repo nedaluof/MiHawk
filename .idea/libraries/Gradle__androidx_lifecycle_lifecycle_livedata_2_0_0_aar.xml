@@ -3,8 +3,11 @@
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/42eb83a5cfe1555af3660a647b227e91/transformed/lifecycle-livedata-2.0.0/res" />
       <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/eecd0188d0cf41e88de876d649a36214/transformed/lifecycle-livedata-2.0.0/res" />
-      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/93dddcc62b876791f79cc01550ca500e/transformed/lifecycle-livedata-2.0.0/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/93dddcc62b876791f79cc01550ca500e/transformed/lifecycle-livedata-2.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/93dddcc62b876791f79cc01550ca500e/transformed/lifecycle-livedata-2.0.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/93dddcc62b876791f79cc01550ca500e/transformed/lifecycle-livedata-2.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/93dddcc62b876791f79cc01550ca500e/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/93dddcc62b876791f79cc01550ca500e/transformed/lifecycle-livedata-2.0.0/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/93dddcc62b876791f79cc01550ca500e/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />

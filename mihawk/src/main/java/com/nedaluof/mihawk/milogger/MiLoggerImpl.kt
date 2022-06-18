@@ -6,7 +6,7 @@ import com.nedaluof.mihawk.miutil.MiConstants
 /**
  * Created by NedaluOf on 11/12/2021.
  */
-object MiLoggerImpl : MiLogger {
+class MiLoggerImpl : MiLogger {
   override fun info(message: String) {
     Log.i(MiConstants.LOG_I, message)
   }
