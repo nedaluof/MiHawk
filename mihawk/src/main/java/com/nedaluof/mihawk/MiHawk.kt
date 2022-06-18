@@ -1,4 +1,4 @@
-@file:Suppress("NON_PUBLIC_CALL_FROM_PUBLIC_INLINE")
+@file:Suppress("NON_PUBLIC_CALL_FROM_PUBLIC_INLINE", "unused")
 
 package com.nedaluof.mihawk
 
@@ -8,10 +8,12 @@ import com.nedaluof.mihawk.miencryption.MiEncryption
 import com.nedaluof.mihawk.mifacade.MiHawkFacade
 import com.nedaluof.mihawk.mifacade.MiHawkFacadeImpl
 import com.nedaluof.mihawk.milogger.MiLogger
+import com.nedaluof.mihawk.mipreferences.MiPreferencesImpl
 import com.nedaluof.mihawk.mipreparation.MiPreparation
 import com.nedaluof.mihawk.mipreparation.MiPreparationImpl
 import com.nedaluof.mihawk.miserializer.MiSerializer
 import com.nedaluof.mihawk.miserializer.MiSerializerImpl
+import com.nedaluof.mihawk.miutil.MiConstants
 import com.nedaluof.mihawk.miutil.MiServiceLocator
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
@@ -25,7 +27,9 @@ object MiHawk {
   private lateinit var miHawkFacade: MiHawkFacade
 
   /**
-   * first way to initialize MiHawk
+   * easy way to initialize MiHawk
+   * without any customization
+   * @param context
    * */
   fun init(context: Context) {
     miHawkFacade = Builder(context).build()
@@ -167,68 +171,66 @@ object MiHawk {
    * */
   class Builder(
     private val context: Context
-  ) : MiHawkBuilder {
+  ) {
 
     private lateinit var miLogger: MiLogger
     private var miSerializer: MiSerializer = MiSerializerImpl(Gson())
     private lateinit var miEncryption: MiEncryption
     private lateinit var miPreparation: MiPreparation
 
-    override fun withPreferenceName(preferenceFileName: String) = apply {
+    /**
+     * @param preferenceFileName :  your preference file name
+     * if not set ; then the default one will be used
+     * @see [MiConstants.DEFAULT_PREFERENCE_FILE_NAME]
+     * */
+    fun withPreferenceName(preferenceFileName: String) = apply {
       MiServiceLocator.preferenceFileName = preferenceFileName
     }
 
-    override fun withLoggingEnabled(isLoggerEnabled: Boolean) = apply {
+    /**
+     * @param isLoggerEnabled : indicate if logger enable
+     * */
+    fun withLoggingEnabled(isLoggerEnabled: Boolean) = apply {
       MiServiceLocator.isLoggerEnabled = isLoggerEnabled
     }
 
-    override fun withMiLogger(miLogger: MiLogger) = apply {
+    fun withMiLogger(miLogger: MiLogger) = apply {
       this.miLogger = miLogger
     }
 
-    override fun withMiSerializer(miSerializer: MiSerializer) = apply {
+    fun withMiSerializer(miSerializer: MiSerializer) = apply {
       this.miSerializer = miSerializer
     }
 
-    override fun withMiEncryption(miEncryption: MiEncryption) = apply {
+    fun withMiEncryption(miEncryption: MiEncryption) = apply {
       this.miEncryption = miEncryption
     }
 
     fun build(): MiHawkFacade {
       val weakContext = WeakReference(context)
       val context = weakContext.get()!!
-      miPreparation = if (!::miPreparation.isInitialized) {
-        MiServiceLocator.provideMiPreparation(context)
-      } else {
-        getMiPreparation(context)
-      }
       val newFacade = MiHawkFacadeImpl(
-        MiServiceLocator.provideMiPreferences(
+        MiPreferencesImpl.buildMiPreferences(
           MiServiceLocator.provideDataStore(context),
-          miPreparation,
+          getMiPreparation(context),
           getMiLogger()
         )
       )
       miHawkFacade = newFacade
-      return newFacade
+      return miHawkFacade
     }
 
-    private fun getMiPreparation(context: Context): MiPreparation {
-      if (!::miEncryption.isInitialized) {
-        miEncryption = MiServiceLocator.provideMiEncryption(context)
+    private fun getMiPreparation(context: Context): MiPreparation =
+      if (!::miPreparation.isInitialized) {
+        MiServiceLocator.provideMiPreparation(context)
+      } else {
+        if (!::miEncryption.isInitialized) {
+          miEncryption = MiServiceLocator.provideMiEncryption(context)
+        }
+        MiPreparationImpl(miSerializer, miEncryption)
       }
-      return MiPreparationImpl(miSerializer, miEncryption)
-    }
 
     private fun getMiLogger(): MiLogger =
       if (!::miLogger.isInitialized) MiServiceLocator.provideMiLogger() else miLogger
-  }
-
-  interface MiHawkBuilder {
-    fun withPreferenceName(preferenceFileName: String): Builder
-    fun withLoggingEnabled(isLoggerEnabled: Boolean): Builder
-    fun withMiLogger(miLogger: MiLogger): Builder
-    fun withMiSerializer(miSerializer: MiSerializer): Builder
-    fun withMiEncryption(miEncryption: MiEncryption): Builder
   }
 }

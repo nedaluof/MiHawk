@@ -48,8 +48,8 @@ class MiPreferencesImpl internal constructor(
           checkIfIsLoggerEnabled { miLogger.info("getData -> ${value.toString()}") }
           value
         } catch (e: Exception) {
-          miLogger.error("getData -> ${e.message!!}")
-          miLogger.error("getData -> No data Stored With this key in MiHawk")
+          checkIfIsLoggerEnabled { miLogger.error("getData -> ${e.message!!}") }
+          checkIfIsLoggerEnabled { miLogger.error("getData -> No data Stored With this key in MiHawk") }
           null
         }
       }
@@ -138,5 +138,17 @@ class MiPreferencesImpl internal constructor(
     if (MiServiceLocator.isLoggerEnabled) {
       loggerEnabled()
     }
+  }
+
+  companion object {
+    fun buildMiPreferences(
+      dataStore: DataStore<Preferences>,
+      miPreparation: MiPreparation,
+      miLogger: MiLogger
+    ): MiPreferences = MiPreferencesImpl(
+      dataStore,
+      miPreparation,
+      miLogger
+    )
   }
 }

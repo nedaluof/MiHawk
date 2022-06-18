@@ -18,7 +18,7 @@ class MiDataStoreInitializer(
 ) {
 
   private fun sharedPreferencesMigration(context: Context) =
-    listOf(SharedPreferencesMigration(context, MiConstants.PREFERENCE_FILE_NAME_DO_NOT_CHANGE))
+    listOf(SharedPreferencesMigration(context, MiConstants.DEFAULT_PREFERENCE_FILE_NAME))
 
   private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(
     name = preferenceFileName,

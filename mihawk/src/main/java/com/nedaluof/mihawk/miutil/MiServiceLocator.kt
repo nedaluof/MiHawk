@@ -9,8 +9,6 @@ import com.nedaluof.mihawk.miencryption.MiEncryptionImpl
 import com.nedaluof.mihawk.miencryption.MiNoEncryption
 import com.nedaluof.mihawk.milogger.MiLogger
 import com.nedaluof.mihawk.milogger.MiLoggerImpl
-import com.nedaluof.mihawk.mipreferences.MiPreferences
-import com.nedaluof.mihawk.mipreferences.MiPreferencesImpl
 import com.nedaluof.mihawk.mipreparation.MiPreparation
 import com.nedaluof.mihawk.mipreparation.MiPreparationImpl
 import com.nedaluof.mihawk.miserializer.MiSerializer
@@ -21,9 +19,10 @@ import com.nedaluof.mihawk.miserializer.MiSerializerImpl
  */
 object MiServiceLocator {
 
+  @Volatile
   var isLoggerEnabled = true
 
-  var preferenceFileName = MiConstants.PREFERENCE_FILE_NAME_DO_NOT_CHANGE
+  var preferenceFileName = MiConstants.DEFAULT_PREFERENCE_FILE_NAME
 
   fun provideMiLogger(): MiLogger = MiLoggerImpl()
 
@@ -39,16 +38,6 @@ object MiServiceLocator {
     }
     return encryption
   }
-
-  fun provideMiPreferences(
-    dataStore: DataStore<Preferences>,
-    miPreparation: MiPreparation,
-    miLogger: MiLogger
-  ): MiPreferences = MiPreferencesImpl(
-    dataStore,
-    miPreparation,
-    miLogger
-  )
 
   fun provideDataStore(context: Context): DataStore<Preferences> {
     return MiDataStoreInitializer(context, preferenceFileName).dataStore
