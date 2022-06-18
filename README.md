@@ -17,44 +17,69 @@ allprojects {
 
 //Include the library in your build.gradle.YOUR_MODULE
 dependencies {
-   implementation 'com.github.nedaluof:MiHawk:1.0.1'
+   implementation 'com.github.nedaluof:MiHawk:1.1.2'
 }
 
 ```
-
+#### - Initialize MiHawk:
 ```kotlin
-
- - init MiHawk:
-   MiHawk.init(context) //must called before any use of MiHawk else RuntimeException will be thrown
- 
- - put data to MiHawk:
-   MiHawk.put(key: String, value: T)
- 
-- get data from MiHawk:
-  MiHawk.get(key: String, result: (T?) -> Unit)
-  OR with default value:
-  MiHawk.get(key: String, defaultValue: T,  result: (T?) -> Unit)
- 
-- remove data from MiHawk:
-  MiHawk.remove(key: String, result: (Boolean) -> Unit)
- 
-- to check if data exist in MiHawk by key:
+  /**
+   * There are two ways to init MiHawk , in both MiHawk must initialized 
+   * before any use of it else RuntimeException will be thrown
+   * */
+   MiHawk.init(context)
+   //OR 
+   MiHawk.Builder(context)
+      .withPreferenceName("MI_HAWK_PREFS")
+      .withLoggingEnabled(false)
+      .withMiLogger(MiLogger Implementation)
+      .withMiEncryption(MiEncryption Implementation)
+      .withMiSerializer(MiSerializer Implementation)
+      .build()
+```      
+#### - Put data to MiHawk:
+```kotlin
+  MiHawk.put(key: String, value: T)
+```
+#### - Get data from MiHawk:
+ - over result block "Higher-order function"
+```kotlin
+  MiHawk.get<T>(key: String, result: (T?) -> Unit)
+  //OR with default value:
+  MiHawk.get<T>(key: String, defaultValue: T,  result: (T?) -> Unit)
+``` 
+ - direct result 
+```kotlin
+  MiHawk.get<T>(key: String) : T?
+  //OR with default value:
+  MiHawk.get<T>(key: String, defaultValue: T) : T? 
+``` 
+#### - Check if data exist in MiHawk by key:
+```kotlin
   MiHawk.contains(key: String, result: (Boolean) -> Unit)
-
-- to delete all data saved in MiHawk:
+```
+#### - Remove data from MiHawk:
+```kotlin
+  MiHawk.remove(key: String, result: (Boolean) -> Unit)
+``` 
+#### - Remove all saved data from MiHawk:
+```kotlin
   MiHawk.deleteAll(result: (Boolean) -> Unit)
 ```
 
+<br/>
+<br/>
 
-### Coming channges / Todos
+### - Coming channges / Todos
 -----
-- [ ] Make the MiHawk customizable.
 - [ ] Replace [Facebook Conceal](https://github.com/facebookarchive/conceal) with alternative encryption algorithm.
 - [ ] Provide heavy unit test.
 - [ ] Provide simple UI that simulate the inputs to test.
 
 
 
+<br/>
+<br/>
 
 ### License
 
