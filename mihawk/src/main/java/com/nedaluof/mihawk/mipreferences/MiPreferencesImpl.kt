@@ -34,7 +34,7 @@ class MiPreferencesImpl internal constructor(
         }
         checkIfIsLoggerEnabled { miLogger.info("putData -> ${value.toString()}") }
       } catch (e: Exception) {
-        checkIfIsLoggerEnabled { miLogger.error("putData -> ${e.message!!}") }
+        checkIfIsLoggerEnabled { miLogger.error("putData -> ${e.message ?: ""}") }
         e.printStackTrace()
       }
     }
@@ -48,7 +48,7 @@ class MiPreferencesImpl internal constructor(
           checkIfIsLoggerEnabled { miLogger.info("getData -> ${value.toString()}") }
           value
         } catch (e: Exception) {
-          checkIfIsLoggerEnabled { miLogger.error("getData -> ${e.message!!}") }
+          checkIfIsLoggerEnabled { miLogger.error("getData -> ${e.message ?: ""}") }
           checkIfIsLoggerEnabled { miLogger.error("getData -> No data Stored With this key in MiHawk") }
           null
         }
@@ -63,7 +63,7 @@ class MiPreferencesImpl internal constructor(
         checkIfIsLoggerEnabled { miLogger.info("removeData -> removed successfully") }
         result(true)
       } catch (e: Exception) {
-        checkIfIsLoggerEnabled { miLogger.error("removeData -> ${e.message!!}") }
+        checkIfIsLoggerEnabled { miLogger.error("removeData -> ${e.message ?: ""}") }
         result(false)
       }
     }
@@ -78,7 +78,7 @@ class MiPreferencesImpl internal constructor(
         }
         checkIfIsLoggerEnabled { miLogger.info("deleteAll -> all data deleted successfully") }
       } catch (e: Exception) {
-        checkIfIsLoggerEnabled { miLogger.error("deleteAll -> ${e.message!!}") }
+        checkIfIsLoggerEnabled { miLogger.error("deleteAll -> ${e.message ?: ""}") }
         e.printStackTrace()
       }
     }
@@ -90,7 +90,7 @@ class MiPreferencesImpl internal constructor(
         dataStore.edit { result(it.contains(key)) }
         checkIfIsLoggerEnabled { miLogger.info("contains -> check if $key exist.") }
       } catch (e: Exception) {
-        checkIfIsLoggerEnabled { miLogger.error("deleteAll -> ${e.message!!}") }
+        checkIfIsLoggerEnabled { miLogger.error("deleteAll -> ${e.message ?: ""}") }
         e.printStackTrace()
       }
     }
@@ -115,8 +115,9 @@ class MiPreferencesImpl internal constructor(
     key: String,
     aClass: Class<T>
   ): T? {
+    /**cipherText this not data , data is enveloped in [MiEncryptionSpec]**/
     val cipherText = get(stringPreferencesKey(key))!!
-    return miPreparation.prepareDataToGet(Pair(key, cipherText), aClass)
+    return miPreparation.prepareDataToGet(cipherText, aClass)
       ?: get(stringPreferencesKey(key)) as T?
   }
 

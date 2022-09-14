@@ -1,6 +1,7 @@
 package com.nedaluof.mihawk.mipreparation
 
 import com.nedaluof.mihawk.miencryption.MiEncryption
+import com.nedaluof.mihawk.miencryption.model.MiEncryptionSpec
 import com.nedaluof.mihawk.miserializer.MiSerializer
 
 /**
@@ -16,23 +17,26 @@ class MiPreparationImpl(
     value: T
   ): String {
     val serializedValue = serializer.toString(value)
+    val miSpec: MiEncryptionSpec
     var cipher = ""
     if (encryptor.initialized()) {
-      cipher = encryptor.encrypt(key, serializedValue)
+      miSpec = encryptor.encrypt(key, serializedValue)
+      val miSpecSerialized = serializer.toString(miSpec)
+      cipher = miSpecSerialized
     }
     return cipher.ifEmpty { serializedValue }
   }
 
   override fun <T> prepareDataToGet(
-    keyAndCipherText: Pair<String, String>,
+    cipherText: String,
     aClass: Class<T>
   ): T? {
-    val key = keyAndCipherText.first
-    val cipherText = keyAndCipherText.second
-
+    val miEncryptionSpec = serializer.fromString(cipherText, MiEncryptionSpec::class.java)
     var plainText = ""
     if (encryptor.initialized()) {
-      plainText = encryptor.decrypt(key, cipherText)
+      if (miEncryptionSpec != null) {
+        plainText = encryptor.decrypt(miEncryptionSpec)
+      }
     }
     return if (plainText.isNotEmpty()) serializer.fromString(plainText, aClass) else null
   }

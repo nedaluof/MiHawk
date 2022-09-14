@@ -12,7 +12,7 @@ import com.nedaluof.mihawk.milogger.MiLogger
 class MainActivity : AppCompatActivity() {
 
   companion object {
-    private const val TAG = "NEDALUOF"
+    private const val TAG = "MY_LOGGER"
   }
 
   /*Todo: UI needed to make some test that depend on the inputs from user*/
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
   private fun initMiHawk() {
     MiHawk.Builder(this)
       .withPreferenceName("NEDAL_PREFS")
-      //.withLoggingEnabled(false)
+      .withLoggingEnabled(false)
       .withMiLogger(object : MiLogger {
         override fun info(message: String) {
           Log.i("MY_LOGGER", message)
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun debug(message: String) {
-          Log.d("MY_LOGGER", message)
+          Log.e("MY_LOGGER", message)
         }
       })
       .build()
@@ -56,9 +56,11 @@ class MainActivity : AppCompatActivity() {
     MiHawk.put(key, value)
     MiHawk.get<Int>(key) {
       it?.let {
-        Log.d("MY_LOGGER", "processInt $it")
+        Log.e("MY_LOGGER", "processInt $it")
       }
     }
+    val int = MiHawk.get<Int>(key)
+    Log.e("MY_LOGGER", "processInt $int")
   }
 
   private fun processDouble() {
@@ -67,7 +69,7 @@ class MainActivity : AppCompatActivity() {
     MiHawk.put(key, value)
     MiHawk.get<Double>(key) {
       it?.let {
-        Log.d("MY_LOGGER", "processDouble $it")
+        Log.e("MY_LOGGER", "processDouble $it")
       }
     }
   }
@@ -78,7 +80,7 @@ class MainActivity : AppCompatActivity() {
     MiHawk.put(key, value)
     MiHawk.get<String>(key) {
       it?.let {
-        Log.d("MY_LOGGER", "processString $it")
+        Log.e("MY_LOGGER", "processString $it")
       }
     }
   }
@@ -89,7 +91,7 @@ class MainActivity : AppCompatActivity() {
     MiHawk.put(key, value)
     MiHawk.get<List<String>>(key) {
       it?.let {
-        Log.d("MY_LOGGER", "processStringList $it")
+        Log.e("MY_LOGGER", "processStringList $it")
       }
     }
   }
@@ -102,7 +104,7 @@ class MainActivity : AppCompatActivity() {
     MiHawk.put(key, value)
     MiHawk.get<Test>(key) {
       it?.let {
-        Log.d("MY_LOGGER", "processObject $it")
+        Log.e("MY_LOGGER", "processObject $it")
       }
     }
   }
@@ -115,14 +117,14 @@ class MainActivity : AppCompatActivity() {
     MiHawk.put(key, value)
     MiHawk.get<List<Test>>(key) {
       it?.let {
-        Log.d("MY_LOGGER", "processObjectList $it")
+        Log.e("MY_LOGGER", "processObjectList $it")
       }
     }
   }
 
   private fun processDeleteOfAllEntries() {
     MiHawk.deleteAll {
-      Log.d("MY_LOGGER", "delete result $it")
+      Log.e("MY_LOGGER", "delete result $it")
     }
   }
 }

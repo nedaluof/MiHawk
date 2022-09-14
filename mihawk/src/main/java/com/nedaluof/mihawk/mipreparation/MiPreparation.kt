@@ -14,7 +14,7 @@ interface MiPreparation {
 
   @WorkerThread
   fun <T> prepareDataToGet(
-    keyAndCipherText: Pair<String, String>,
+    cipherText: String,
     aClass: Class<T>
   ): T?
 }
