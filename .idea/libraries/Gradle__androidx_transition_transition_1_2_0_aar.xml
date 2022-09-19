@@ -2,15 +2,15 @@
   <library name="Gradle: androidx.transition:transition:1.2.0@aar">
     <ANNOTATIONS>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/9682c8376a2af0601d8d2f9a5f5ddc68/transformed/transition-1.2.0/annotations.zip!/" />
-      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/9682c8376a2af0601d8d2f9a5f5ddc68/transformed/transition-1.2.0/annotations.zip!/" />
+      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/e89f6667b25ffd1e670d2a33688ccd32/transformed/transition-1.2.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/9682c8376a2af0601d8d2f9a5f5ddc68/transformed/transition-1.2.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9682c8376a2af0601d8d2f9a5f5ddc68/transformed/transition-1.2.0/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9682c8376a2af0601d8d2f9a5f5ddc68/transformed/transition-1.2.0/res" />
-      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/9682c8376a2af0601d8d2f9a5f5ddc68/transformed/transition-1.2.0/AndroidManifest.xml" />
-      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/9682c8376a2af0601d8d2f9a5f5ddc68/transformed/transition-1.2.0/res" />
-      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/9682c8376a2af0601d8d2f9a5f5ddc68/transformed/transition-1.2.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/e89f6667b25ffd1e670d2a33688ccd32/transformed/transition-1.2.0/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/e89f6667b25ffd1e670d2a33688ccd32/transformed/transition-1.2.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/e89f6667b25ffd1e670d2a33688ccd32/transformed/transition-1.2.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

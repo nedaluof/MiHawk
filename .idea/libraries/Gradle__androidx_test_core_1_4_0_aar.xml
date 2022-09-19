@@ -7,8 +7,10 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/21cb53833b1aaec78b16ff80f4b06b17/transformed/jetified-core-1.4.0/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/21cb53833b1aaec78b16ff80f4b06b17/transformed/jetified-core-1.4.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/21cb53833b1aaec78b16ff80f4b06b17/transformed/jetified-core-1.4.0/res" />
-      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/21cb53833b1aaec78b16ff80f4b06b17/transformed/jetified-core-1.4.0/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/21cb53833b1aaec78b16ff80f4b06b17/transformed/jetified-core-1.4.0/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/0a97e84e2d9f35b1bfddebf0ca8d03cc/transformed/jetified-core-1.4.0/res" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/0e94ef71916350eaea1c293c344e20f3/transformed/jetified-core-1.4.0/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/0e94ef71916350eaea1c293c344e20f3/transformed/jetified-core-1.4.0/res" />
+      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/0e94ef71916350eaea1c293c344e20f3/transformed/jetified-core-1.4.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/modules-2/files-2.1/androidx.test/core/1.4.0/96b4d161def059d92989a352500d05d215c33d5e/core-1.4.0-javadoc.jar!/" />

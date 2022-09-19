@@ -7,8 +7,10 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/7a30b507f06ffac532a58faee11fec06/transformed/core-runtime-2.0.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7a30b507f06ffac532a58faee11fec06/transformed/core-runtime-2.0.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7a30b507f06ffac532a58faee11fec06/transformed/core-runtime-2.0.0/AndroidManifest.xml" />
-      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/7a30b507f06ffac532a58faee11fec06/transformed/core-runtime-2.0.0/AndroidManifest.xml" />
-      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/7a30b507f06ffac532a58faee11fec06/transformed/core-runtime-2.0.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/f069e3e6f5a9141a615c218e8d9aae87/transformed/core-runtime-2.0.0/res" />
+      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/7a1490c0f3bd89d31503ed45ed10154f/transformed/core-runtime-2.0.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/7a1490c0f3bd89d31503ed45ed10154f/transformed/core-runtime-2.0.0/res" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/7a1490c0f3bd89d31503ed45ed10154f/transformed/core-runtime-2.0.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

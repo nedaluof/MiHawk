@@ -7,6 +7,8 @@ import com.google.gson.Gson
 import com.nedaluof.mihawk.miencryption.MiEncryption
 import com.nedaluof.mihawk.miencryption.MiEncryptionImpl
 import com.nedaluof.mihawk.miencryption.MiNoEncryption
+import com.nedaluof.mihawk.miencryption.ciphermanager.MiAesCipherManager
+import com.nedaluof.mihawk.miencryption.ciphermanager.MiAesCipherManagerImpl
 import com.nedaluof.mihawk.milogger.MiLogger
 import com.nedaluof.mihawk.milogger.MiLoggerImpl
 import com.nedaluof.mihawk.mipreferences.MiDataStoreInitializer
@@ -32,8 +34,12 @@ object MiServiceLocator {
 
   private fun provideMiSerializer(): MiSerializer = MiSerializerImpl(Gson())
 
+  private fun provideMiAesCipherManager(context: Context): MiAesCipherManager =
+    MiAesCipherManagerImpl(context)
+
   fun provideMiEncryption(context: Context): MiEncryption {
-    var encryption: MiEncryption = MiEncryptionImpl(context)
+    val miAesCipherManager = provideMiAesCipherManager(context)
+    var encryption: MiEncryption = MiEncryptionImpl(miAesCipherManager)
     if (!encryption.initialized()) {
       encryption = MiNoEncryption()
     }

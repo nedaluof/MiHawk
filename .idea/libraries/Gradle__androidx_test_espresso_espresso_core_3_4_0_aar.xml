@@ -7,8 +7,10 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/75394bb24d4fc3610d63f1164d7a7279/transformed/espresso-core-3.4.0/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/75394bb24d4fc3610d63f1164d7a7279/transformed/espresso-core-3.4.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/75394bb24d4fc3610d63f1164d7a7279/transformed/espresso-core-3.4.0/AndroidManifest.xml" />
-      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/75394bb24d4fc3610d63f1164d7a7279/transformed/espresso-core-3.4.0/AndroidManifest.xml" />
-      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/75394bb24d4fc3610d63f1164d7a7279/transformed/espresso-core-3.4.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/56ef30a2c5663932d83f2fc2e16b4c2b/transformed/espresso-core-3.4.0/res" />
+      <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/147423e11adf33768b26c7afc937f457/transformed/espresso-core-3.4.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/147423e11adf33768b26c7afc937f457/transformed/espresso-core-3.4.0/res" />
+      <root url="file://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/transforms-3/147423e11adf33768b26c7afc937f457/transformed/espresso-core-3.4.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/../MagWeath/.gradle/6.1.1/caches/modules-2/files-2.1/androidx.test.espresso/espresso-core/3.4.0/527848e2722cd3ada150b991c0e620ec4f0a8b/espresso-core-3.4.0-javadoc.jar!/" />

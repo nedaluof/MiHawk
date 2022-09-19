@@ -4,12 +4,11 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 33
 
     defaultConfig {
         minSdk 23
-        targetSdk 31
-        versionName "1.1.2"
+        targetSdk 33
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -30,10 +29,9 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
     implementation "com.google.code.gson:gson:2.9.0"
-    implementation 'com.facebook.conceal:conceal:2.0.2@aar'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
     implementation "androidx.datastore:datastore-preferences:1.0.0"
     //testing
     testImplementation 'junit:junit:4.13.2'
