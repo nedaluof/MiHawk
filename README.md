@@ -1,5 +1,4 @@
-[![](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://jitpack.io/#nedaluof/MiHawk) [![](https://jitpack.io/v/nedaluof/MiHawk.svg)](https://jitpack.io/#nedaluof/MiHawk) [![](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://twitter.com/nedaluof) [![](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://twitter.com/nedaluof)
- [![](https://img.shields.io/github/release/nedaluof/MiHawk.svg)](https://twitter.com/nedaluof)
+[![](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://jitpack.io/#nedaluof/MiHawk) [![](https://jitpack.io/v/nedaluof/MiHawk.svg)](https://jitpack.io/#nedaluof/MiHawk) [![](https://img.shields.io/github/release/nedaluof/MiHawk.svg)](https://twitter.com/nedaluof) [![](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://twitter.com/nedaluof) [![](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://twitter.com/nedaluof)
 <br/>
 <br/>
 <br/>
