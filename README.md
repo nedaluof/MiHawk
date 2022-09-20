@@ -1,4 +1,9 @@
-<img src="https://github.com/nedaluof/MiHawk/blob/master/art/mihawk_eye.jpg?raw=true" width="150">[![](https://jitpack.io/v/nedaluof/MiHawk.svg)](https://jitpack.io/#nedaluof/MiHawk)
+[![](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://jitpack.io/#nedaluof/MiHawk) [![](https://jitpack.io/v/nedaluof/MiHawk.svg)](https://jitpack.io/#nedaluof/MiHawk) [![](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://twitter.com/nedaluof) [![](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://twitter.com/nedaluof)
+ [![](https://img.shields.io/github/release/nedaluof/MiHawk.svg)](https://twitter.com/nedaluof)
+<br/>
+<br/>
+<br/>
+<img src="https://github.com/nedaluof/MiHawk/blob/master/art/mihawk_eye.jpg?raw=true" width="150"> [![](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://jitpack.io/#nedaluof/MiHawk) 
 # MiHawk
 MiHawk 🦅👁️ is simple and secure 🔒 Android Library to store and retrieve pair of key-value data with encryption , internally it use jetpack DataStore Preferences 💽 to store data. 
 
@@ -17,7 +22,7 @@ allprojects {
 
 //Include the library in your build.gradle.YOUR_MODULE
 dependencies {
-   implementation 'com.github.nedaluof:MiHawk:1.1.2'
+   implementation 'com.github.nedaluof:MiHawk:1.2.2'
 }
 
 ```
@@ -70,9 +75,8 @@ dependencies {
 <br/>
 <br/>
 
-### - Coming channges / Todos
+### - Todos
 -----
-- [ ] Replace [Facebook Conceal](https://github.com/facebookarchive/conceal) with alternative encryption algorithm.
 - [ ] Provide heavy unit test.
 - [ ] Provide simple UI that simulate the inputs to test.
 
