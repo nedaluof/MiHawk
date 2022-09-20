@@ -1,8 +1,12 @@
-[![](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://jitpack.io/#nedaluof/MiHawk) [![](https://jitpack.io/v/nedaluof/MiHawk.svg)](https://jitpack.io/#nedaluof/MiHawk) [![](https://img.shields.io/github/release/nedaluof/MiHawk.svg)](https://twitter.com/nedaluof) [![](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://twitter.com/nedaluof) [![](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://twitter.com/nedaluof)
+[![](https://jitpack.io/v/nedaluof/MiHawk.svg)](https://jitpack.io/#nedaluof/MiHawk) [![](https://img.shields.io/github/release/nedaluof/MiHawk.svg)](https://twitter.com/nedaluof) [![](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://twitter.com/nedaluof) [![](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://twitter.com/nedaluof)
 <br/>
 <br/>
 <br/>
-<img src="https://github.com/nedaluof/MiHawk/blob/master/art/mihawk_eye.jpg?raw=true" width="150"> [![](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://jitpack.io/#nedaluof/MiHawk) 
+[![](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://jitpack.io/#nedaluof/MiHawk) 
+[![](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://jitpack.io/#nedaluof/MiHawk)
+<br/>
+<br/>
+<img src="https://github.com/nedaluof/MiHawk/blob/master/art/mihawk_eye.jpg?raw=true" width="150">
 # MiHawk
 MiHawk 🦅👁️ is simple and secure 🔒 Android Library to store and retrieve pair of key-value data with encryption , internally it use jetpack DataStore Preferences 💽 to store data. 
 
