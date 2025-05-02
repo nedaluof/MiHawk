@@ -1,5 +1,4 @@
 @file:Suppress("NON_PUBLIC_CALL_FROM_PUBLIC_INLINE", "unused")
-
 package com.nedaluof.mihawk
 
 import android.content.Context

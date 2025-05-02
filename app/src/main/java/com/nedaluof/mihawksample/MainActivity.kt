@@ -2,24 +2,23 @@ package com.nedaluof.mihawksample
 
 import android.os.Bundle
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
 import com.nedaluof.mihawk.MiHawk
 import com.nedaluof.mihawk.milogger.MiLogger
 
 /**
  * Created by NedaluOf on 11/17/2021.
  */
-class MainActivity : AppCompatActivity() {
-
-  companion object {
-    private const val TAG = "MY_LOGGER"
-  }
+class MainActivity : ComponentActivity() {
 
   /*Todo: UI needed to make some test that depend on the inputs from user*/
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_main)
-    //MiHawk.init(this)
+    setContent {
+
+    }
+
     initMiHawk()
     processInt()
     processDouble()

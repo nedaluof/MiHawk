@@ -29,7 +29,7 @@ class MiPreferencesImpl internal constructor(
   override fun <T> putData(key: String, value: T) {
     runBlocking(dispatcher) {
       try {
-        dataStore.edit { preferences ->
+        dataStore.edit { preferences : MutablePreferences ->
           preferences[key] = value
         }
         checkIfIsLoggerEnabled { miLogger.info("putData -> ${value.toString()}") }
