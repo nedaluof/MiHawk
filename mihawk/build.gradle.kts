@@ -10,7 +10,7 @@ android {
 
   defaultConfig {
     minSdk = Integer.valueOf(libs.versions.min.sdk.get())
-    targetSdk = Integer.valueOf(libs.versions.target.sdk.get())
+    lint.targetSdk = Integer.valueOf(libs.versions.target.sdk.get())
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
 
