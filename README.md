@@ -99,98 +99,98 @@ dependencies {
 
 ### put/get Int or any number in MiHawk:
 ```kotlin
-    val key = "my_int_key"
-    val value = 2025
-    //set key and value
-    MiHawk.put(key, value)
-    MiHawk.get<Int>(key) {
-      it?.let {
-        Log.e("MY_LOGGER", "my int $it")
-      }
-    }
-    //Or
-    val int = MiHawk.get<Int>(key)
-    Log.e("MY_LOGGER", "my int $int")
+val key = "my_int_key"
+val value = 2025
+//set key and value
+MiHawk.put(key, value)
+MiHawk.get<Int>(key) {
+  it?.let {
+    Log.e("MY_LOGGER", "my int $it")
+  }
+}
+//Or
+val int = MiHawk.get<Int>(key)
+Log.e("MY_LOGGER", "my int $int")
 ```
 
 ### put/get String in MiHawk:
 ```kotlin
-    val key = "my_string_key"
-    val value = "Ny Awesome String"
-    //set key and value
-    MiHawk.put(key, value)
-    //get stored value
-    MiHawk.get<String>(key) {
-      it?.let {
-        Log.e("MY_LOGGER", "my string $it")
-      }
-    }
-    //Or
-    val string = MiHawk.get<String>(key)
-    Log.e("MY_LOGGER", "my string $string")
+val key = "my_string_key"
+val value = "Ny Awesome String"
+//set key and value
+MiHawk.put(key, value)
+//get stored value
+MiHawk.get<String>(key) {
+  it?.let {
+    Log.e("MY_LOGGER", "my string $it")
+  }
+}
+//Or
+val string = MiHawk.get<String>(key)
+Log.e("MY_LOGGER", "my string $string")
 ```
 
 ### put/get String in MiHawk:
 ```kotlin
-    val key = "my_string_list"
-    val value = listOf("name","phone","email")
-    //set key and value
-    MiHawk.put(key, value)
-    //get stored value
-    MiHawk.get<List<String>>(key) {
-      it?.let {
-        Log.e("MY_LOGGER", "my strings $it")
-      }
-    }
-    //Or
-    val strings = MiHawk.get<List<String>>(key)
-    Log.e("MY_LOGGER", "my strings $strings")
+val key = "my_string_list"
+val value = listOf("name","phone","email")
+//set key and value
+MiHawk.put(key, value)
+//get stored value
+MiHawk.get<List<String>>(key) {
+  it?.let {
+    Log.e("MY_LOGGER", "my strings $it")
+  }
+}
+//Or
+val strings = MiHawk.get<List<String>>(key)
+Log.e("MY_LOGGER", "my strings $strings")
 ```
 
 ### put/get Object in MiHawk:
 ```kotlin
-    data class User(val name: String = "Nedal", val email: String = "nidal.hassan.95@gmail.com")
-    
-    val key = "my_user_object"
-    val value = User()
-    //set key and value
-    MiHawk.put(key, value)
-    //get stored value
-    MiHawk.get<User>(key) {
-      it?.let {
-        Log.e("MY_LOGGER", "my user $it")
-      }
-    }
-    //Or
-    val user = MiHawk.get<User>(key)
-    Log.e("MY_LOGGER", "my user $user")
+data class User(val name: String = "Nedal", val email: String = "nidal.hassan.95@gmail.com")
+
+val key = "my_user_object"
+val value = User()
+//set key and value
+MiHawk.put(key, value)
+//get stored value
+MiHawk.get<User>(key) {
+  it?.let {
+    Log.e("MY_LOGGER", "my user $it")
+  }
+}
+//Or
+val user = MiHawk.get<User>(key)
+Log.e("MY_LOGGER", "my user $user")
 ```
 
 ### put/get List of Objects in MiHawk:
 ```kotlin
-    data class Item(
-      val name: String = "Colombian Coffee",
-      val expDate: String = "2030/05/04"
-    )
-    
-    val key = "object-list"
-    val value = listOf(
-      Item(),
-      Item("Matrix Cola Diet", "2026/05/04"),
-      Item("Wholemeal Toast Bread", "2025/05/06")
-    )
-    //set key and value
-    MiHawk.put(key, value)
-    //get stored value
-    MiHawk.get<List<Item>>(key) {
-      it?.let {
-        Log.e("MY_LOGGER", "my items $it")
-      }
-    }
-    
-    //Or
-    val items = MiHawk.get<List<Item>>(key)
-    Log.e("MY_LOGGER", "my items $items")
+data class Item(
+  val name: String = "Colombian Coffee",
+  val expDate: String = "2030/05/04"
+)
+
+val key = "object-list"
+val value = listOf(
+  Item(),
+  Item("Matrix Cola Diet", "2026/05/04"),
+  Item("Wholemeal Toast Bread", "2025/05/06")
+)
+//set key and value
+MiHawk.put(key, value)
+//get stored value
+MiHawk.get<List<Item>>(key) {
+  it?.let {
+    Log.e("MY_LOGGER", "my items $it")
+  }
+}
+
+//Or
+val items = MiHawk.get<List<Item>>(key)
+Log.e("MY_LOGGER", "my items $items")
 ```
 
 <br/>
