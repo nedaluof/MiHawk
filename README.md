@@ -33,7 +33,6 @@ Usage
   mihawk = { group = "com.github.nedaluof", name = "MiHawk", version.ref = "mihawk" }
   //then
   implementation(libs.mihawk)
-
 ```      
 
 ```groovy
