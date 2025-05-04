@@ -97,7 +97,7 @@ dependencies {
 
 ## Examples
 
-### put/get Int or any number in MiHawk:
+#### - put/get Int or any number in MiHawk:
 ```kotlin
 val key = "my_int_key"
 val value = 2025
@@ -113,7 +113,7 @@ val int = MiHawk.get<Int>(key)
 Log.e("MY_LOGGER", "my int $int")
 ```
 
-### put/get String in MiHawk:
+#### - put/get String in MiHawk:
 ```kotlin
 val key = "my_string_key"
 val value = "Ny Awesome String"
@@ -130,7 +130,7 @@ val string = MiHawk.get<String>(key)
 Log.e("MY_LOGGER", "my string $string")
 ```
 
-### put/get String in MiHawk:
+#### - put/get String in MiHawk:
 ```kotlin
 val key = "my_string_list"
 val value = listOf("name","phone","email")
@@ -147,7 +147,7 @@ val strings = MiHawk.get<List<String>>(key)
 Log.e("MY_LOGGER", "my strings $strings")
 ```
 
-### put/get Object in MiHawk:
+#### - put/get Object in MiHawk:
 ```kotlin
 data class User(val name: String = "Nedal", val email: String = "nidal.hassan.95@gmail.com")
 
@@ -166,7 +166,7 @@ val user = MiHawk.get<User>(key)
 Log.e("MY_LOGGER", "my user $user")
 ```
 
-### put/get List of Objects in MiHawk:
+#### - put/get List of Objects in MiHawk:
 ```kotlin
 data class Item(
   val name: String = "Colombian Coffee",
