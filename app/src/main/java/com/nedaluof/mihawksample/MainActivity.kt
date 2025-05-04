@@ -4,22 +4,35 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Text
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.sp
 import com.nedaluof.mihawk.MiHawk
-import com.nedaluof.mihawk.milogger.MiLogger
 
 /**
  * Created by NedaluOf on 11/17/2021.
  */
 class MainActivity : ComponentActivity() {
 
-  /*Todo: UI needed to make some test that depend on the inputs from user*/
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+    enableEdgeToEdge()
     setContent {
-
+      Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+      ) {
+        Text(
+          text = stringResource(R.string.app_name),
+          fontSize = 26.sp
+        )
+      }
     }
-
-    initMiHawk()
     processInt()
     processDouble()
     processString()
@@ -27,26 +40,6 @@ class MainActivity : ComponentActivity() {
     processObject()
     processObjectList()
     processDeleteOfAllEntries()
-  }
-
-  private fun initMiHawk() {
-    MiHawk.Builder(this)
-      .withPreferenceName("NEDAL_PREFS")
-      .withLoggingEnabled(false)
-      .withMiLogger(object : MiLogger {
-        override fun info(message: String) {
-          Log.i("MY_LOGGER", message)
-        }
-
-        override fun error(message: String) {
-          Log.e("MY_LOGGER", message)
-        }
-
-        override fun debug(message: String) {
-          Log.e("MY_LOGGER", message)
-        }
-      })
-      .build()
   }
 
   private fun processInt() {
@@ -76,7 +69,9 @@ class MainActivity : ComponentActivity() {
   private fun processString() {
     val key = "string"
     val value = "nedaluOf"
+    //set key and value
     MiHawk.put(key, value)
+    //get stored value
     MiHawk.get<String>(key) {
       it?.let {
         Log.e("MY_LOGGER", "processString $it")
@@ -85,40 +80,61 @@ class MainActivity : ComponentActivity() {
   }
 
   private fun processStringList() {
-    val key = "string-list"
-    val value = listOf("nedaluOf", "AhmaduOf", "MohammaduOf")
+    val key = "my_strings_list"
+    val value = listOf("name", "phone", "email")
+    //set key and value
     MiHawk.put(key, value)
+    //get stored value
     MiHawk.get<List<String>>(key) {
       it?.let {
-        Log.e("MY_LOGGER", "processStringList $it")
+        Log.e("MY_LOGGER", "my strings $it")
       }
     }
   }
 
   private fun processObject() {
-    data class Test(val test: String = "test", val age: Int = 26)
+    data class User(val name: String = "Nedal", val email: String = "nidal.hassan.95@gmail.com")
 
-    val key = "object"
-    val value = Test()
+    val key = "my_user"
+    val value = User()
+    //set key and value
     MiHawk.put(key, value)
-    MiHawk.get<Test>(key) {
+    //get stored value
+    MiHawk.get<User>(key) {
       it?.let {
-        Log.e("MY_LOGGER", "processObject $it")
+        Log.e("MY_LOGGER", "my user $it")
       }
     }
+
+    //Or
+    val user = MiHawk.get<User>(key)
+    Log.e("MY_LOGGER", "my user $user")
   }
 
   private fun processObjectList() {
-    data class Test(val test: String = "test", val age: Int = 26)
+    data class Item(
+      val name: String = "Colombian Coffee",
+      val expDate: String = "2030/05/04"
+    )
 
     val key = "object-list"
-    val value = listOf(Test("nedaluOf"), Test("AhmaduOf", 18), Test("MohammaduOf", 24))
+    val value = listOf(
+      Item(),
+      Item("Matrix Cola Diet", "2026/05/04"),
+      Item("Toast-Bread", "2025/05/04")
+    )
+    //set key and value
     MiHawk.put(key, value)
-    MiHawk.get<List<Test>>(key) {
+    //get stored value
+    MiHawk.get<List<Item>>(key) {
       it?.let {
-        Log.e("MY_LOGGER", "processObjectList $it")
+        Log.e("MY_LOGGER", "my items $it")
       }
     }
+
+    //Or
+    val items = MiHawk.get<List<Item>>(key)
+    Log.e("MY_LOGGER", "my items $items")
   }
 
   private fun processDeleteOfAllEntries() {
