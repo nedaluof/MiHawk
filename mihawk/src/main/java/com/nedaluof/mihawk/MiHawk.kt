@@ -1,4 +1,5 @@
 @file:Suppress("NON_PUBLIC_CALL_FROM_PUBLIC_INLINE", "unused")
+
 package com.nedaluof.mihawk
 
 import android.content.Context
@@ -7,6 +8,8 @@ import com.nedaluof.mihawk.miencryption.MiEncryption
 import com.nedaluof.mihawk.mifacade.MiHawkFacade
 import com.nedaluof.mihawk.mifacade.MiHawkFacadeImpl
 import com.nedaluof.mihawk.milogger.MiLogger
+import com.nedaluof.mihawk.mimigration.DefaultMiMigration
+import com.nedaluof.mihawk.mimigration.MiMigration
 import com.nedaluof.mihawk.mipreferences.MiPreferencesImpl
 import com.nedaluof.mihawk.mipreparation.MiPreparation
 import com.nedaluof.mihawk.mipreparation.MiPreparationImpl
@@ -165,7 +168,7 @@ object MiHawk {
    * this [Builder] built to make
    * MiHawk more customizable , you can
    * adapt your logger , serializer , encryptor
-   * , preferences file name , enable/disable
+   * migration , preferences file name , enable/disable
    * default MiHawk Logger
    * */
   class Builder(
@@ -174,8 +177,9 @@ object MiHawk {
 
     private lateinit var miLogger: MiLogger
     private var miSerializer: MiSerializer = MiSerializerImpl(Gson())
-    private lateinit var miEncryption: MiEncryption
     private lateinit var miPreparation: MiPreparation
+    private lateinit var miEncryption: MiEncryption
+    private lateinit var miMigration: MiMigration
 
     /**
      * @param preferenceFileName :  your preference file name
@@ -205,12 +209,16 @@ object MiHawk {
       this.miEncryption = miEncryption
     }
 
+    fun withMiMigration(miMigration: MiMigration) = apply {
+      this.miMigration = miMigration
+    }
+
     fun build(): MiHawkFacade {
       val weakContext = WeakReference(context)
       val context = weakContext.get()!!
       val newFacade = MiHawkFacadeImpl(
         MiPreferencesImpl.buildMiPreferences(
-          MiServiceLocator.provideDataStore(context),
+          MiServiceLocator.provideDataStore(context, getMiMigration()),
           getMiPreparation(context),
           getMiLogger()
         )
@@ -218,6 +226,9 @@ object MiHawk {
       miHawkFacade = newFacade
       return miHawkFacade
     }
+
+    private fun getMiMigration(): MiMigration =
+      if (!::miMigration.isInitialized) DefaultMiMigration() else miMigration
 
     private fun getMiPreparation(context: Context): MiPreparation =
       if (!::miPreparation.isInitialized) {

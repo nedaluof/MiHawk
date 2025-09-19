@@ -5,27 +5,34 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.SharedPreferencesMigration
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
-import com.nedaluof.mihawk.miutil.MiConstants
+import com.nedaluof.mihawk.mimigration.DefaultMiMigration
+import com.nedaluof.mihawk.mimigration.MiMigration
 
 /**
  * Created by NedaluOf on 5/27/2022.
- * *********************************************
- * Todo: Migration strategy for people whose
- *       need to use MiHawk in existing projects
- *       that use shared preference.
+ * Updated by NedaluOf on 19/09/2025.
  */
 class MiDataStoreInitializer(
   context: Context,
-  preferenceFileName: String
+  preferenceFileName: String,
+  private val miMigration: MiMigration
 ) {
-
-  private fun sharedPreferencesMigration(context: Context) =
-    listOf(SharedPreferencesMigration(context, MiConstants.DEFAULT_PREFERENCE_FILE_NAME))
-
+  //region logic
   private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(
     name = preferenceFileName,
-    produceMigrations = ::sharedPreferencesMigration
+    produceMigrations = { context ->
+      if (miMigration !is DefaultMiMigration) {
+        listOf(
+          SharedPreferencesMigration(
+            context = context,
+            sharedPreferencesName = miMigration.oldSharedPreferencesFileName(),
+            keysToMigrate = miMigration.oldKeysToMigrate()
+          )
+        )
+      } else emptyList()
+    }
   )
 
   val dataStore: DataStore<Preferences> = context.dataStore
+  //endregion
 }

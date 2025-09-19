@@ -11,6 +11,7 @@ import com.nedaluof.mihawk.miencryption.ciphermanager.MiAesCipherManager
 import com.nedaluof.mihawk.miencryption.ciphermanager.MiAesCipherManagerImpl
 import com.nedaluof.mihawk.milogger.MiLogger
 import com.nedaluof.mihawk.milogger.MiLoggerImpl
+import com.nedaluof.mihawk.mimigration.MiMigration
 import com.nedaluof.mihawk.mipreferences.MiDataStoreInitializer
 import com.nedaluof.mihawk.mipreparation.MiPreparation
 import com.nedaluof.mihawk.mipreparation.MiPreparationImpl
@@ -46,7 +47,10 @@ object MiServiceLocator {
     return encryption
   }
 
-  fun provideDataStore(context: Context): DataStore<Preferences> {
-    return MiDataStoreInitializer(context, preferenceFileName).dataStore
+  fun provideDataStore(
+    context: Context,
+    miMigration: MiMigration
+  ): DataStore<Preferences> {
+    return MiDataStoreInitializer(context, preferenceFileName, miMigration).dataStore
   }
 }
