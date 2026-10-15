@@ -31,13 +31,36 @@ class MiPreparationImpl(
     cipherText: String,
     aClass: Class<T>
   ): T? {
-    val miEncryptionSpec = serializer.fromString(cipherText, MiEncryptionSpec::class.java)
-    var plainText = ""
-    if (encryptor.initialized()) {
-      if (miEncryptionSpec != null) {
-        plainText = encryptor.decrypt(miEncryptionSpec)
+    val miEncryptionSpec = try {
+      serializer.fromString(cipherText, MiEncryptionSpec::class.java)
+    } catch (e: Exception) {
+      null
+    }
+    if (miEncryptionSpec != null && encryptor.initialized()) {
+      val plainText = encryptor.decrypt(miEncryptionSpec)
+      if (plainText.isNotEmpty()) {
+        return serializer.fromString(plainText, aClass)
       }
     }
-    return if (plainText.isNotEmpty()) serializer.fromString(plainText, aClass) else null
+    return try {
+      serializer.fromString(cipherText, aClass)
+    } catch (e: Exception) {
+      null
+    }
+  }
+
+  override fun <T> prepareDataToGet(
+    rawValue: Any,
+    aClass: Class<T>
+  ): T? {
+    return when {
+      rawValue is String -> prepareDataToGet(rawValue, aClass)
+      aClass.isInstance(rawValue) -> aClass.cast(rawValue)
+      else -> try {
+        serializer.fromString(serializer.toString(rawValue), aClass)
+      } catch (e: Exception) {
+        null
+      }
+    }
   }
 }

@@ -110,15 +110,17 @@ class MiPreferencesImpl internal constructor(
     set(stringPreferencesKey(key), preparedValue)
   }
 
-  @Suppress("UNCHECKED_CAST")
   private operator fun <T> Preferences.get(
     key: String,
     aClass: Class<T>
   ): T? {
-    /**cipherText this not data , data is enveloped in [MiEncryptionSpec]**/
-    val cipherText = get(stringPreferencesKey(key))!!
-    return miPreparation.prepareDataToGet(cipherText, aClass)
-      ?: get(stringPreferencesKey(key)) as T?
+    /**
+     * DataStore Preferences.Key equality is name based, so a value migrated from
+     * SharedPreferences may be stored under a non-String type (Int, Boolean, ...).
+     * Reading via asMap() avoids the ClassCastException a typed get would throw.
+     * */
+    val rawValue = asMap()[stringPreferencesKey(key)] ?: return null
+    return miPreparation.prepareDataToGet(rawValue, aClass)
   }
 
   private fun MutablePreferences.remove(

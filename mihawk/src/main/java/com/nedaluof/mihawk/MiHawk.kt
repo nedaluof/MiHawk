@@ -4,6 +4,7 @@ package com.nedaluof.mihawk
 
 import android.content.Context
 import com.google.gson.Gson
+import com.nedaluof.mihawk.MiHawk.put
 import com.nedaluof.mihawk.miencryption.MiEncryption
 import com.nedaluof.mihawk.mifacade.MiHawkFacade
 import com.nedaluof.mihawk.mifacade.MiHawkFacadeImpl
@@ -40,7 +41,7 @@ object MiHawk {
   /**
    * Put data to be stored on MiHawk
    * @param key : key used to retrieve your data using it
-   * @param value : value/data of what you want data class model
+   * @param value  value/data of what you want data class model
    *               or primitives or list .... etc.
    * */
   inline fun <reified T> put(key: String, value: T) {
@@ -50,10 +51,10 @@ object MiHawk {
 
   /**
    * Get your data using :
-   * @param key : that you using on [put] function
+   * @param key : that you're using on [put] function
    * @param result : data returned over Higher-order function block
    *                this useful if you need to restrict the flow
-   *                until the data retrieved , if there no
+   *                until the data retrieved , if there are no
    *                data associated with the provided key
    *                {null} will be returned.
    * */
@@ -66,9 +67,9 @@ object MiHawk {
 
   /**
    * Get your data using
-   * @param key : that you using on [put] function
+   * @param key : that you're using on [put] function
    * @return T : data that you saved using [put] function
-   *            if there no data associated with the provided
+   *            if there are no data associated with the provided
    *            key {null} will be returned.
    * */
   inline fun <reified T> get(key: String): T? {
@@ -84,7 +85,7 @@ object MiHawk {
 
   /**
    * Get your data using :
-   * @param key : that you using on [put] function
+   * @param key : that you're using on [put] function
    * @param defaultValue : default value if no such data stored before
    *                      using this key.
    * @param result : data returned over Higher-order function block
@@ -100,11 +101,11 @@ object MiHawk {
 
   /**
    * Get your data using
-   * @param key : that you using on [put] function
+   * @param key : that you're using on [put] function
    * @param defaultValue : default value if no such data stored before
    *                      using this key.
    * @return T : data that you saved using [put] function
-   *            if there no data associated with the provided
+   *            if there are no data associated with the provided
    *            key.
    * */
   inline fun <reified T> get(key: String, defaultValue: T): T {
@@ -133,7 +134,7 @@ object MiHawk {
 
   /**
    * Contains data
-   * @param key : take the provided key and check if there data associated with it.
+   * @param key : take the provided key and check if their data associated with it.
    * @param result : result will be returned over Higher-order function block
    *                 , this return boolean to indicate that there data associated
    *                 with the key or not.

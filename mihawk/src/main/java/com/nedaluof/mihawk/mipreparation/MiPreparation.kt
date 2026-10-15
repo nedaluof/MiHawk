@@ -17,4 +17,10 @@ interface MiPreparation {
     cipherText: String,
     aClass: Class<T>
   ): T?
+
+  @WorkerThread
+  fun <T> prepareDataToGet(
+    rawValue: Any,
+    aClass: Class<T>
+  ): T?
 }
