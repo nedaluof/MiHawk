@@ -12,7 +12,7 @@ import com.nedaluof.mihawk.miencryption.ciphermanager.MiAesCipherManagerImpl
 import com.nedaluof.mihawk.milogger.MiLogger
 import com.nedaluof.mihawk.milogger.MiLoggerImpl
 import com.nedaluof.mihawk.mimigration.MiMigration
-import com.nedaluof.mihawk.mipreferences.MiDataStoreInitializer
+import com.nedaluof.mihawk.mipreferences.initializer.MiDataStoreInitializer
 import com.nedaluof.mihawk.mipreparation.MiPreparation
 import com.nedaluof.mihawk.mipreparation.MiPreparationImpl
 import com.nedaluof.mihawk.miserializer.MiSerializer

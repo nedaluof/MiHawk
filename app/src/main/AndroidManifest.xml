@@ -4,7 +4,7 @@
     package="com.nedaluof.mihawksample">
 
     <application
-        android:name=".MiHawkApplication"
+        android:name=".app.MiHawkApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         tools:ignore="DataExtractionRules">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
