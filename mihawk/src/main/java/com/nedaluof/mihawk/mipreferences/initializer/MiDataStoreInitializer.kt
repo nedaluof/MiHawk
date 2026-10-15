@@ -1,10 +1,8 @@
 package com.nedaluof.mihawk.mipreferences.initializer
 
 import android.content.Context
-import androidx.datastore.core.DataMigration
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.SharedPreferencesMigration
-import androidx.datastore.preferences.core.PreferenceDataStoreFactory
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import com.nedaluof.mihawk.mimigration.DefaultMiMigration
@@ -32,32 +30,10 @@ internal class MiDataStoreInitializer(
           )
         )
       } else {
-        emptyList()
+        listOf()
       }
     }
   )
-
-  /*private val Context.dataStore: DataStore<Preferences>
-    get() = PreferenceDataStoreFactory.create(
-      migrations = listOf(
-        object : DataMigration<Preferences> {
-          override suspend fun cleanUp() {
-            TODO("Not yet implemented")
-          }
-
-          override suspend fun migrate(currentData: Preferences): Preferences {
-            TODO("Not yet implemented")
-          }
-
-          override suspend fun shouldMigrate(currentData: Preferences): Boolean {
-            TODO("Not yet implemented")
-          }
-        }
-      ),
-      produceFile = {
-        get<Context>().preferencesDataStoreFile("filename")
-      }
-    )*/
 
   val dataStore: DataStore<Preferences> = context.dataStore
   //endregion
