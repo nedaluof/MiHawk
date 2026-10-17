@@ -23,12 +23,16 @@ Usage
       }
     }
   }
+  ```  
 
+  ```kotlin DSL
   //Include the library in your build.gradle.YOUR_MODULE
-  implementation("com.github.nedaluof:MiHawk:1.3.0")
+  implementation("com.github.nedaluof:MiHawk:1.4.0")
+  ```  
+  ```kotlin DSL
   //Or by using version catalog
   [versions]
-  mihawk = "1.3.0"
+  mihawk = "1.4.0"
   [libraries]
   mihawk = { group = "com.github.nedaluof", name = "MiHawk", version.ref = "mihawk" }
   //then
@@ -45,10 +49,11 @@ allprojects {
 
 //Include the library in your build.gradle.YOUR_MODULE
 dependencies {
-   implementation 'com.github.nedaluof:MiHawk:1.3.0'
+   implementation 'com.github.nedaluof:MiHawk:1.4.0'
 }
-
 ```
+
+
 #### - Initialize MiHawk:
 ```kotlin
   /**
