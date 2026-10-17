@@ -1,48 +1,24 @@
-package com.nedaluof.mihawksample
+package com.nedaluof.mihawksample.data
 
-import android.os.Bundle
 import android.util.Log
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.sp
 import com.nedaluof.mihawk.MiHawk
 
 /**
- * Created by NedaluOf on 11/17/2021.
+ * Created By NedaluOf - 19/09/2025.
  */
-class MainActivity : ComponentActivity() {
+class MiHawkPreferencesManager {
 
-  override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-    enableEdgeToEdge()
-    setContent {
-      Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-      ) {
-        Text(
-          text = stringResource(R.string.app_name),
-          fontSize = 26.sp
-        )
-      }
-    }
-    processInt()
-    processDouble()
-    processString()
-    processStringList()
-    processObject()
-    processObjectList()
-    processDeleteOfAllEntries()
+  //region logic
+  fun getValuesFromOldPreferences(){
+    Log.e("MY_LOGGER", """
+      Values
+      ${MiHawk.get<String>(PreferencesKeys.USER_NAME)}
+      ${MiHawk.get<Int>(PreferencesKeys.USER_AGE)}
+      ${MiHawk.get<Boolean>(PreferencesKeys.USER_IS_FREE)}
+    """.trimIndent())
   }
 
-  private fun processInt() {
+  fun processInt() {
     val key = "int"
     val value = 1995
     MiHawk.put(key, value)
@@ -55,7 +31,7 @@ class MainActivity : ComponentActivity() {
     Log.e("MY_LOGGER", "processInt $int")
   }
 
-  private fun processDouble() {
+  fun processDouble() {
     val key = "double"
     val value = 1995.5
     MiHawk.put(key, value)
@@ -66,7 +42,7 @@ class MainActivity : ComponentActivity() {
     }
   }
 
-  private fun processString() {
+  fun processString() {
     val key = "string"
     val value = "nedaluOf"
     //set key and value
@@ -79,7 +55,7 @@ class MainActivity : ComponentActivity() {
     }
   }
 
-  private fun processStringList() {
+  fun processStringList() {
     val key = "my_strings_list"
     val value = listOf("name", "phone", "email")
     //set key and value
@@ -92,7 +68,7 @@ class MainActivity : ComponentActivity() {
     }
   }
 
-  private fun processObject() {
+  fun processObject() {
     data class User(val name: String = "Nedal", val email: String = "nidal.hassan.95@gmail.com")
 
     val key = "my_user"
@@ -111,17 +87,14 @@ class MainActivity : ComponentActivity() {
     Log.e("MY_LOGGER", "my user $user")
   }
 
-  private fun processObjectList() {
+  fun processObjectList() {
     data class Item(
-      val name: String = "Colombian Coffee",
-      val expDate: String = "2030/05/04"
+      val name: String = "Colombian Coffee", val expDate: String = "2030/05/04"
     )
 
     val key = "object-list"
     val value = listOf(
-      Item(),
-      Item("Matrix Cola Diet", "2026/05/04"),
-      Item("Toast-Bread", "2025/05/04")
+      Item(), Item("Matrix Cola Diet", "2026/05/04"), Item("Toast-Bread", "2025/05/04")
     )
     //set key and value
     MiHawk.put(key, value)
@@ -137,9 +110,10 @@ class MainActivity : ComponentActivity() {
     Log.e("MY_LOGGER", "my items $items")
   }
 
-  private fun processDeleteOfAllEntries() {
+  fun processDeleteOfAllEntries() {
     MiHawk.deleteAll {
       Log.e("MY_LOGGER", "delete result $it")
     }
   }
+  //endregion
 }

@@ -1,12 +1,16 @@
 @file:Suppress("NON_PUBLIC_CALL_FROM_PUBLIC_INLINE", "unused")
+
 package com.nedaluof.mihawk
 
 import android.content.Context
 import com.google.gson.Gson
+import com.nedaluof.mihawk.MiHawk.put
 import com.nedaluof.mihawk.miencryption.MiEncryption
 import com.nedaluof.mihawk.mifacade.MiHawkFacade
 import com.nedaluof.mihawk.mifacade.MiHawkFacadeImpl
 import com.nedaluof.mihawk.milogger.MiLogger
+import com.nedaluof.mihawk.mimigration.DefaultMiMigration
+import com.nedaluof.mihawk.mimigration.MiMigration
 import com.nedaluof.mihawk.mipreferences.MiPreferencesImpl
 import com.nedaluof.mihawk.mipreparation.MiPreparation
 import com.nedaluof.mihawk.mipreparation.MiPreparationImpl
@@ -37,7 +41,7 @@ object MiHawk {
   /**
    * Put data to be stored on MiHawk
    * @param key : key used to retrieve your data using it
-   * @param value : value/data of what you want data class model
+   * @param value  value/data of what you want data class model
    *               or primitives or list .... etc.
    * */
   inline fun <reified T> put(key: String, value: T) {
@@ -47,10 +51,10 @@ object MiHawk {
 
   /**
    * Get your data using :
-   * @param key : that you using on [put] function
+   * @param key : that you're using on [put] function
    * @param result : data returned over Higher-order function block
    *                this useful if you need to restrict the flow
-   *                until the data retrieved , if there no
+   *                until the data retrieved , if there are no
    *                data associated with the provided key
    *                {null} will be returned.
    * */
@@ -63,9 +67,9 @@ object MiHawk {
 
   /**
    * Get your data using
-   * @param key : that you using on [put] function
+   * @param key : that you're using on [put] function
    * @return T : data that you saved using [put] function
-   *            if there no data associated with the provided
+   *            if there are no data associated with the provided
    *            key {null} will be returned.
    * */
   inline fun <reified T> get(key: String): T? {
@@ -81,7 +85,7 @@ object MiHawk {
 
   /**
    * Get your data using :
-   * @param key : that you using on [put] function
+   * @param key : that you're using on [put] function
    * @param defaultValue : default value if no such data stored before
    *                      using this key.
    * @param result : data returned over Higher-order function block
@@ -97,11 +101,11 @@ object MiHawk {
 
   /**
    * Get your data using
-   * @param key : that you using on [put] function
+   * @param key : that you're using on [put] function
    * @param defaultValue : default value if no such data stored before
    *                      using this key.
    * @return T : data that you saved using [put] function
-   *            if there no data associated with the provided
+   *            if there are no data associated with the provided
    *            key.
    * */
   inline fun <reified T> get(key: String, defaultValue: T): T {
@@ -130,7 +134,7 @@ object MiHawk {
 
   /**
    * Contains data
-   * @param key : take the provided key and check if there data associated with it.
+   * @param key : take the provided key and check if their data associated with it.
    * @param result : result will be returned over Higher-order function block
    *                 , this return boolean to indicate that there data associated
    *                 with the key or not.
@@ -165,7 +169,7 @@ object MiHawk {
    * this [Builder] built to make
    * MiHawk more customizable , you can
    * adapt your logger , serializer , encryptor
-   * , preferences file name , enable/disable
+   * migration , preferences file name , enable/disable
    * default MiHawk Logger
    * */
   class Builder(
@@ -174,8 +178,9 @@ object MiHawk {
 
     private lateinit var miLogger: MiLogger
     private var miSerializer: MiSerializer = MiSerializerImpl(Gson())
-    private lateinit var miEncryption: MiEncryption
     private lateinit var miPreparation: MiPreparation
+    private lateinit var miEncryption: MiEncryption
+    private lateinit var miMigration: MiMigration
 
     /**
      * @param preferenceFileName :  your preference file name
@@ -205,12 +210,16 @@ object MiHawk {
       this.miEncryption = miEncryption
     }
 
+    fun withMiMigration(miMigration: MiMigration) = apply {
+      this.miMigration = miMigration
+    }
+
     fun build(): MiHawkFacade {
       val weakContext = WeakReference(context)
       val context = weakContext.get()!!
       val newFacade = MiHawkFacadeImpl(
         MiPreferencesImpl.buildMiPreferences(
-          MiServiceLocator.provideDataStore(context),
+          MiServiceLocator.provideDataStore(context, getMiMigration()),
           getMiPreparation(context),
           getMiLogger()
         )
@@ -218,6 +227,9 @@ object MiHawk {
       miHawkFacade = newFacade
       return miHawkFacade
     }
+
+    private fun getMiMigration(): MiMigration =
+      if (!::miMigration.isInitialized) DefaultMiMigration() else miMigration
 
     private fun getMiPreparation(context: Context): MiPreparation =
       if (!::miPreparation.isInitialized) {
