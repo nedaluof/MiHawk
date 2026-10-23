@@ -1,8 +1,8 @@
 [versions]
 min-sdk = "23"
 target-sdk = "37"
-version-number = "1"
-version-name = "1.4.1"
+version-number = "21"
+version-name = "1.4.2"
 
 # plugins
 agp = "9.3.3"

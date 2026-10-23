@@ -1,5 +1,8 @@
+import org.gradle.api.publish.maven.MavenPublication
+
 plugins {
   alias(libs.plugins.android.library)
+  `maven-publish`
 }
 
 
@@ -23,6 +26,25 @@ android {
   compileOptions {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
+  }
+
+  publishing {
+    singleVariant("release") {
+      withSourcesJar()
+    }
+  }
+}
+
+afterEvaluate {
+  publishing {
+    publications {
+      register<MavenPublication>("release") {
+        from(components["release"])
+        groupId = "com.github.nedaluof"
+        artifactId = "MiHawk"
+        version = (findProperty("version") as String?) ?: libs.versions.version.name.get()
+      }
+    }
   }
 }
 
