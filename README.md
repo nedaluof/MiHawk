@@ -70,6 +70,41 @@ dependencies {
       .withMiSerializer(MiSerializer Implementation)
       .build()
 ```      
+#### - Migrate existing SharedPreferences to MiHawk:
+If your app already stores preferences in SharedPreferences, MiHawk can migrate them to its DataStore automatically. Pass a `MiMigration` implementation to the builder:
+```kotlin
+import com.nedaluof.mihawk.mimigration.MiMigration
+
+MiHawk.Builder(context)
+  .withPreferenceName("MIHAWK_PREFS")
+  .withMiMigration(object : MiMigration {
+    override fun oldSharedPreferencesFileName(): String = "MI_PREFS"
+
+    override fun oldKeysToMigrate(): Set<String> = setOf(
+      "user_name",
+      "user_age",
+      "user_is_free"
+    )
+  })
+  .build()
+```
+
+Read migrated values with their original types:
+```kotlin
+val name = MiHawk.get<String>("user_name")
+val age = MiHawk.get<Int>("user_age")
+val isFree = MiHawk.get<Boolean>("user_is_free")
+```
+
+#### - Migration notes:
+- Migration runs automatically on the first MiHawk read/write after initialization.
+- Only keys returned by `oldKeysToMigrate()` are migrated; list every key you need.
+- Supported SharedPreferences types: `String`, `Int`, `Long`, `Float`, `Boolean`, and `Set<String>`; other types are ignored.
+- Keys already present in MiHawk's DataStore are not overwritten.
+- After a successful migration, migrated keys are removed from the old SharedPreferences file; the file is deleted if it becomes empty.
+- Migrated values are copied as-is, so values stay unencrypted until written again with `MiHawk.put` when encryption is enabled.
+- If no `MiMigration` is configured, `DefaultMiMigration` is used and nothing is migrated.
+
 #### - Put data to MiHawk:
 ```kotlin
   MiHawk.put(key: String, value: T)
